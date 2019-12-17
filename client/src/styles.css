@@ -1,0 +1,190 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+@font-face {
+    font-family: Rocket;
+    src:url(./fonts/ROCKET_WILDNESS.ttf)
+}
+@font-face {
+    font-family: Amalfi;
+    src: url(./fonts/Amalfi_Coast.ttf)
+}
+@font-face {
+    font-family: Candle-Script;
+    src: url(./fonts/Candlescript_Demo_Version.otf)
+}
+@font-face {
+    font-family: Aldith-Italic;
+    src: url(./fonts/ALDITHItalic.ttf)
+}
+@font-face {
+    font-family: Signature;
+    src: url(./fonts/Photograph_Signature.ttf)
+}
+@font-face {
+    font-family: Learning-Curve;
+    src: url(./fonts/LearningCurve.ttf)
+}
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ===========Home========== */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
+
+
+/* home / Main.js */
+.home {
+    background-image: repeating-linear-gradient(to right, silver 25%, rgb(90, 78, 78) 60%, silver);
+    display: flex;
+    flex-direction: column;
+}
+/* catch all inner photos */
+.home > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px 2px black;
+    height: 250px;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+/* links */
+.home > * > a {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 4px;
+    box-shadow: 0px 2px 5px 0px rgb(0, 0, 0);
+}
+/* each sections photos */
+.home > section {
+    background-image: url("./images/Get-Best-Website-Development.jpg");
+}
+.home > main {
+    background-image: url("./images/IMG_6441.jpg");
+}
+.home > article {
+    background-image: url("./images/IMG_1266.jpg");
+}
+/* texts/links */
+.home > section > a {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.5));
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.home > section > a > span {
+    font-family: Rocket;
+    line-height: 35px;
+    letter-spacing: -4px;
+    font-size: 43px;
+    text-shadow: 2px 2px 3px black;
+}
+.home > main > a {
+    font-family: Signature;
+    line-height: 55px;
+    letter-spacing: 1px;
+    font-size: 48px;
+    text-shadow: 1px 1px 4px black;
+    background-image: linear-gradient(rgba(21, 21, 197, 0.8), rgba(255, 255, 255, 0.5));
+    padding: 6px;
+}
+.home > article > a {
+    font-family: Candle-Script;
+    line-height: 55px;
+    letter-spacing: 2px;
+    font-size: 44px;
+    text-shadow: 2px 2px 5px black;
+    background-image: linear-gradient(rgba(255, 106, 106, 0.8), rgba(255, 255, 255, 0.5));
+    padding-top: 9px;
+    padding-right: 9px;
+}
+
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ===========Home========== */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ==========Footer========= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+/* footer.js */
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+}
+.footer > div {
+    align-self: center;
+    padding: 3px;
+}
+.footer > div > p {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.footer > main {
+    display: flex;
+    margin-bottom: 5px;
+}
+.footer > main > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.footer > main > div:nth-child(1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.35);
+}
+.footer > main > div > a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 17px;
+    line-height: 23px;
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    /* text-decoration: none; */
+}
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ==========Footer========= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
