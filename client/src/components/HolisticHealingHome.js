@@ -1,12 +1,16 @@
 import React from "react"
 
 //components
-import Footer from "./Footer"
+import Footer from "./Footer.js"
+import Header from "./Header.js"
 
 const HolisticHealingHome = props => {
     return(
         <>
-        Holistic Healing Home
+        <Header />
+        <div>
+            Holistic Healing Home
+        </div>
         <Footer />
         </>
     )

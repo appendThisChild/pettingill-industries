@@ -58,9 +58,12 @@
     height: 250px;
     background-size: cover;
     background-position: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0.24, 0.51, 0.38, 1.51);
+}
+.home > *:last-child {
+    margin-bottom: 0px;
 }
 /* links */
 .home > * > div {
@@ -123,6 +126,116 @@
 /* ========================= */
 /* ========================= */
 /* ===========Home========== */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ==========webHome======== */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
+/* WebDevHome .webHome */
+.webHome {
+    height: 500px;
+    box-shadow: inset 0px 3px 20px 4px rgb(0, 0, 0);
+    background-image: url("./images/code.jpg");
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
+.webHome > main {
+    background-color: rgba(0, 0, 0, 0.82);
+    box-shadow: 0px 3px 10px 0px rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+    
+}
+.webHome > main > h1 {
+    color: white;
+    padding: 10px;
+}
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ==========webHome======== */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ==========Header========= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+/* Header.js .header */
+.header {
+    height: 145px;
+    /* background-image: linear-gradient(to right bottom, rgb(255, 255, 255), rgb(0, 0, 0) ); */
+    background-color: rgb(158, 158, 158);
+}
+.header > div:first-child {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.80), rgba(0, 0, 0, 0.75));
+    border-bottom: 1px solid silver;
+    height: 225px;
+    transform: skewY(5deg);
+    position: relative;
+    top: -65px;
+}
+.header > div:last-child {
+    position: relative;
+    top: -220px;
+}
+.header > div > p {
+    /* color: white; */
+    font-family: Aldith-Italic;
+    font-size: 38px;
+    letter-spacing: 4px;
+
+}
+.header > div > p:first-child {
+    padding-top: 18px;
+    margin-left: 18px;
+}
+.header > div > p:last-child {
+    padding-top: 8px;
+    margin-left: 82px;
+}
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ==========Header========= */
 /* ========================= */
 /* ========================= */
 /* ========================= */
@@ -200,7 +313,10 @@
     .expanded {
         height: 425px;
     }
-
+    /* webDevHome */
+    .webHome {
+        padding-top: 55px;
+    }
 }
 @media (min-width: 768px){
     /* home */
@@ -212,15 +328,22 @@
         overflow: hidden;
         margin-left: 5px;
         margin-right: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         height: 750px;
     }
     .expanded {
         flex: 2;
     }
+    /* webDevHome */
+    .webHome {
+        padding-top: 68px;
+    }
 }
 @media (min-width: 1024px){
-
+    /* webDevHome */
+    .webHome {
+        padding-top: 85px;
+    }
 }
 @media (min-width: 1440px){
 

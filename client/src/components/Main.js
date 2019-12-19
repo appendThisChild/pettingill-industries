@@ -31,7 +31,6 @@ const Main = props => {
                     </div>
                 </article>
             </div>
-            <Footer />
         </>
     )
 }
