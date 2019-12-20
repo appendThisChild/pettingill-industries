@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react"
+import Image from "../images/website-development.jpg"
 
 //components
 import Footer from "./Footer.js"
 import Header from "./Header.js"
+import ContactForm from "./ContactForm.js"
 
 const WebDevHome = props => {
     const [ position, setPosition ] = useState("50% 50%")
     const [ size, setSize ] = useState("125%")
     const [ transition, setTransition ] = useState(".5s")
     const [ timing, setTiming ] = useState("cubic-bezier(.09,1.44,.17,.24)")
+
+    const handleSubmit = message => {
+        console.log(message)
+    }
 
     const changeBackground = num => {
         const randomNum1 = Math.floor(Math.random() * 100)
@@ -28,9 +34,7 @@ const WebDevHome = props => {
         } else {
             setTiming(`${option3}`)
         }
-        
     }
-
     const glitchOut = () => {
         let i = 1
         changeBackground(1)
@@ -40,22 +44,71 @@ const WebDevHome = props => {
             i++
             if (i > 3) i = 1;
         }, 3000);
-        
     }
-
     useEffect(() => {
-        
         glitchOut()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
     return(
         <>
         <Header />
         <div className="webHome" style={{ backgroundPosition: position, backgroundSize: `auto ${size}`, transition: `all ${transition} ${timing} 0s`}}>
-            <main>
+            <div>
                 <h1>Website Development</h1>
-            </main>
+                <div>
+                    <main>
+                        <img src={Image} alt="Working on your Business"/>
+                    </main>
+                    <section>
+                        <h2>Our Mission</h2>
+                        
+                    </section>
+                    <section>
+                        <h2>Services</h2>
+
+                    </section>
+                </div>
+                <ContactForm 
+                    className="webForm"
+                    questions={[
+                    {
+                        question: "Name",
+                        tag: "input",
+                        objTag: "name"
+                    },
+                    {
+                        question: "Email Address",
+                        tag: "input",
+                        objTag: "email"
+                    },
+                    {
+                        question: "Telephone",
+                        tag: "input",
+                        objTag: "number"
+                    },
+                    {
+                        question: "Name of the business:",
+                        tag: "input",
+                        objTag: "businessName"
+                    },
+                    {
+                        question: "Describe the business:",
+                        tag: "textarea",
+                        objTag: "businessAbout"
+                    },
+                    {
+                        question: "What would the website accomplish for the business?",
+                        tag: "textarea",
+                        objTag: "businessWebsite"
+                    },
+                    {
+                        question: "Other:",
+                        tag: "textarea",
+                        objTag: "other"
+                    }
+                    ]}
+                    handleSubmit={handleSubmit} />
+            </div>
         </div>
         <Footer />
         </>

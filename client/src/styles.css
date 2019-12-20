@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+textarea {
+    resize: none;
+}
 @font-face {
     font-family: Rocket;
     src:url(./fonts/ROCKET_WILDNESS.ttf)
@@ -149,25 +152,119 @@
 
 /* WebDevHome .webHome */
 .webHome {
-    height: 500px;
     box-shadow: inset 0px 3px 20px 4px rgb(0, 0, 0);
     background-image: url("./images/code.jpg");
     padding-top: 40px;
     padding-bottom: 15px;
 }
-.webHome > main {
-    background-color: rgba(0, 0, 0, 0.82);
-    box-shadow: 0px 3px 10px 0px rgb(0, 0, 0);
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 100%;
+.webHome > div {
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: 0px 3px 10px 2px rgb(150, 150, 150);
+    padding-bottom: 5px;
+}
+.webHome > div > div > * {
+    margin-bottom: 20px;
+}
+.webHome > div > div > section {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 5px;
+}
+.webHome > div > h1 {
+    padding-top: 7px;
+    padding-bottom: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-bottom: 1px solid blue;
+}
+.webHome > div > div > main > img {
+    display: block;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.webHome > div > div > * > h2 {
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 1px solid blue;
+}
+.webForm {
+    background-color: rgb(32, 32, 190);
+    margin: 3px;
+    padding: 5px;
+    border-radius: 10px;
+    border: outset 3px rgb(32, 32, 190); 
+}
+.webForm > h3 {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 37px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.webForm > div {
+    margin-bottom: 15px;
+}
+.webForm > div > * {
+    font-family: auto;
+    font-size: 21px;
+}
+.webForm > div > p {
+    margin-bottom: 3px;
+}
+.webForm > div > input {
+    width: 98%;
+    background-color: whitesmoke;
+    border: inset 3px rgb(32, 32, 190); 
+    border-radius: 5px;
+    padding: 2px;
+    text-indent: 3px;
+}
+.webForm > div > textarea {
+    width: 98%;
+    height: 150px;
+    background-color: whitesmoke;
+    border: inset 3px rgb(32, 32, 190); 
+    border-radius: 5px;
+    padding: 2px;
+    text-indent: 3px;
+}
+.webForm > div:nth-last-child(2) {
+    margin-bottom: 0px;
+}
+.webForm > button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.webForm > button > span {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
     
 }
-.webHome > main > h1 {
-    color: white;
-    padding: 10px;
+.webForm > button > span > span {
+    font-family: auto;
+    font-size: 21px;
+    padding-left: 5px;
 }
-
 
 
 

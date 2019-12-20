@@ -1,8 +1,5 @@
 import React, { useState } from "react"
 
-// components
-import Footer from "./Footer.js"
-
 const Main = props => {
     const [ on, setOn ] = useState("")
     const { history } = props
