@@ -8,17 +8,18 @@ import ContactForm from "./ContactForm.js"
 
 const WebDevHome = props => {
     const [ position, setPosition ] = useState("50% 50%")
-    const [ size, setSize ] = useState("125%")
+    const [ size, setSize ] = useState("100%")
     const [ transition, setTransition ] = useState(".5s")
     const [ timing, setTiming ] = useState("cubic-bezier(.09,1.44,.17,.24)")
+    let myInterval = 0;
 
     const handleSubmit = message => {
         console.log(message)
     }
 
     const changeBackground = num => {
-        const randomNum1 = Math.floor(Math.random() * 100)
-        setSize(`${125 + randomNum1}%`)
+        const randomNum1 = Math.floor(Math.random() * 50)
+        setSize(`${25 + randomNum1}%`)
         const randomNum2 = Math.floor(Math.random() * 100)
         const randomNum3 = Math.floor(Math.random() * 100)
         setPosition(`${randomNum2}% ${randomNum3}%`)
@@ -39,7 +40,7 @@ const WebDevHome = props => {
         let i = 1
         changeBackground(1)
         i++
-        setInterval(() => {
+        myInterval = setInterval(() => {
             changeBackground(i)
             i++
             if (i > 3) i = 1;
@@ -47,6 +48,9 @@ const WebDevHome = props => {
     }
     useEffect(() => {
         glitchOut()
+        return () => {
+            clearInterval(myInterval)
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return(
