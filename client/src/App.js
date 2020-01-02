@@ -10,7 +10,7 @@ import HolisticHealingHome from "./components/HolisticHealingHome.js"
 
 const App = () => {
     return(
-        <div>
+        <>
             <Switch>
                 <Route exact path="/" render={renderProps => <Main {...renderProps}/>}/>
                 <Route path="/website-development" render={renderProps => <WebDevHome {...renderProps}/>}/>
@@ -18,7 +18,7 @@ const App = () => {
                 <Route path="/holistic-healing" render={renderProps => <HolisticHealingHome {...renderProps}/>}/>
                 {/* <Route path="/contact-us" render={renderProps => <ContactUs {...renderProps}/>}/> */}
             </Switch>
-        </div>
+        </>
     )
 }
 

@@ -13,8 +13,7 @@ const Main = props => {
             <div className="home">
                 <section onClick={() => setOn("section")} className={on === "section" ? "expanded" : ""}>
                     <div onClick={() => link("website-development")}>
-                        <span>Website</span>
-                        <span>Development</span>
+                        Website Development
                     </div>
                 </section>
                 <main onClick={() => setOn("main")} className={on === "main" ? "expanded" : ""}>
