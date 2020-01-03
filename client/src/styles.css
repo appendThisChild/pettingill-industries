@@ -170,55 +170,88 @@ html, body {
 
 /* WebDevHome .webHome */
 .webHome {
-    box-shadow: inset 0px 3px 20px 4px rgb(0, 0, 0);
+    box-shadow: inset 0px 3px 20px 3px rgb(0, 0, 0);
     background-image: url("./images/code.jpg");
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.webHome > div {
+    padding: 30px;
+    border-radius: 50%;
+    background-image: radial-gradient(rgba(77, 57, 255, 0.8) 45%, rgba(255, 255, 255, 0) 76%);
+}
+.webHome > div > h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    /* line-height: 28px; */
+}
+.webHome > div > h1:first-child {
+    border-bottom: 1px solid black;
+    margin-bottom: 3px;
+    padding-bottom: 5px;
+}
+
+
+
+
+
+.webDevSection1Container {
+    background-image: url(./images/circuit-vector-techno-3.png);
+    background-size: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.webHome > div {
-    background-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 0px 2px 5px 1px rgb(0, 0, 0);
-    padding-top: 5px;
-    padding-bottom: 5px;
+ .webDevSection1 {
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
 }
-.webHome > div > div > * {
-    margin-bottom: 20px;
-}
-.webHome > div > div > section {
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 5px;
-}
-.webHome > div > h1 {
-    background-color: rgba(255, 255, 255, 0.65);
+.webDevSection1 > h1 {
     padding-top: 7px;
     padding-bottom: 8px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 8px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 25px;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
-    font-size: 43px;
-    line-height: 38px;
-    text-align: center;
-    letter-spacing: 1px;
+    font-size: 35px;
+    line-height: 28px;
     border-bottom: 1px solid blue;
 }
-.webHome > div > div > main > img {
-    display: block;
-    width: 99%;
-    margin-left: auto;
-    margin-right: auto;
+.webDevSection1 > p {
+    font-size: 18px;
 }
-.webHome > div > div > * > h2 {
-    color: white;
-    font-family:'Times New Roman', Times, serif;
-    font-weight: 500;
-    font-size: 33px;
-    line-height: 30px;
-    text-align: center;
-    letter-spacing: 2px;
-    border-bottom: 1px solid blue;
+
+
+
+
+.webDevBetweenSections1 {
+    box-shadow: inset 0px 3px 20px 3px rgb(0, 0, 0);
+    background-image: url(./images/be55770577d53fb0bac13f5eba5ea3d7.png);
+    background-position: center;
+    height: 250px;
 }
+.webDevBetweenSections1_0 {
+    background-size: 100%;
+    transition: all 1.25s ease-in-out 0s;
+    
+}
+.webDevBetweenSections1_1 {
+    background-size: 150%;
+    transition: all 1.25s cubic-bezier(.35,2.5,0,-0.29) 0s;
+}
+
+
+
 .webForm {
     background-color: rgb(32, 32, 190);
     margin: 3px;
