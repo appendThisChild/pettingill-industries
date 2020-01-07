@@ -170,7 +170,7 @@ html, body {
 
 /* WebDevHome .webHome */
 .webDevBetweenSections {
-    box-shadow: inset 0px 3px 20px 3px rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
     background-image: url("./images/code.jpg");
     height: 250px;
     display: flex;
@@ -229,7 +229,7 @@ html, body {
 
 
 .webDevBetweenSections1 {
-    box-shadow: inset 0px 3px 20px 3px rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
     background-image: url(./images/be55770577d53fb0bac13f5eba5ea3d7.png);
     background-position: center;
     height: 250px;
@@ -240,13 +240,13 @@ html, body {
 .webDevBetweenSections1_0 {
     background-color: black;
     background-size: 100%;
-    transition: all 1.25s cubic-bezier(.44,-0.68,0,-0.44) 0s;
+    transition: all 1.40s cubic-bezier(.44,-0.68,0,-0.44) 0s;
     
 }
 .webDevBetweenSections1_1 {
     background-color: white;
     background-size: 140%;
-    transition: all 1.25s cubic-bezier(1,1.44,.44,1.68) 0s;
+    transition: all 1.40s cubic-bezier(1,1.44,.44,1.68) 0s;
 }
 .webDevBetweenSections1 > div {
     padding: 30px;
@@ -266,19 +266,24 @@ html, body {
 
 
 .webDevBetweenSections2 {
-    box-shadow: inset 0px 3px 20px 3px rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
     height: 250px;
     background-color: rgb(0, 0, 0);
     /* background-image: url(./images/blue-circuit-png-2.png); */
-    background-size: auto 150%;
+    background-size: auto 125%;
     background-repeat: no-repeat;
     background-position: 0% center;
+    
 }
 .webDevBetweenSections2 > aside {
     background-color: blue;
     border-radius: 50%;
     height: 2px;
     width: 2px;
+    position: relative;
+}
+.webDevBetweenSections2 > div {
+    background-color: blue;
     position: relative;
 }
 
