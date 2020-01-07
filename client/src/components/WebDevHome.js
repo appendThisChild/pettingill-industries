@@ -14,6 +14,20 @@ const WebDevHome = props => {
     const [ size, setSize ] = useState("250%")
     const [ pulsingSize, setPulsingSize ] = useState("webDevBetweenSections1_0")
     const [ timing, setTiming ] = useState("cubic-bezier(.09,1.44,.17,.24)")
+    const width = window.innerWidth
+    let numberOfLines;
+    console.log(width)
+    if (width < 425){
+        numberOfLines = 15;
+    } else if (width < 768){
+        numberOfLines = 20;
+    } else if (width < 1024){
+        numberOfLines = 25;
+    } else if (width < 1440){
+        numberOfLines = 30;
+    }
+    const lineLengths = 75;
+    const stepsBeforeTurn = 25;
     let myInterval1 = 0;
     let myInterval2 = 0;
     let myInterval3 = 0;
@@ -62,22 +76,19 @@ const WebDevHome = props => {
             if ( i === 0){
                 i++
                 pulsing(i)
-                
             } else {
                 i--
                 pulsing(i)
-                
             }
         }, 1250)
     }
     const createDivs = () => {
         let divArr = []
-        const width = window.innerWidth
-        for (let i = 0; i < 5; i++){
+        for (let i = 0; i < numberOfLines; i++){
             const randomNum1 = Math.floor(Math.random() * 248)
             const randomNum2 = Math.floor(Math.random() * width - 2)
             let insideArr = []
-            for (let j = 0; j < 100; j++){
+            for (let j = 0; j < lineLengths; j++){
                 insideArr.push([randomNum1, randomNum2])
             }
             divArr.push([insideArr, null])
@@ -94,12 +105,17 @@ const WebDevHome = props => {
             return randomNum
         }
     }
-    const newGridPoint = (top, left, prevPosition, spacesMoved) => {
-        const direction = numberBetween1And4ExceptFor(prevPosition)
+    const newGridPoint = (top, left, prevPosition, sameDirection) => {
+        let direction;
+        if (sameDirection){
+            direction = prevPosition
+        } else {
+            direction = numberBetween1And4ExceptFor(prevPosition)
+        }
         let newTop = top;
         let newLeft = left;
         if (direction === 0 || direction === 2) {
-            const upDownMove = direction === 0 ? top + spacesMoved * 2 : top - spacesMoved * 2
+            const upDownMove = direction === 0 ? top + 2 : top - 2
             // moving the element 2px up or down
             if (upDownMove > 248 || upDownMove < 0){
                 newTop = upDownMove > 248 ? upDownMove - 250 : upDownMove + 250
@@ -107,9 +123,8 @@ const WebDevHome = props => {
                 newTop = upDownMove
             }
         } else {
-            const width = window.innerWidth
-            const leftRightMove = direction === 1 ? left + spacesMoved * 2 : left - spacesMoved * 2
-            // moving the element 1% left or right
+            const leftRightMove = direction === 1 ? left + 2 : left - 2
+            // moving the element 2px left or right
             if (leftRightMove > width || leftRightMove < 0) {
                 newLeft = leftRightMove > width ? leftRightMove - width : leftRightMove + width
             } else {
@@ -118,82 +133,37 @@ const WebDevHome = props => {
         }
         return [[newTop, newLeft], direction]
     }
-    const gridPointMove = (topLeftArr, prevPosition) => {
-        let prevGridPoint;
-        let firstMove;
-        let direction;
-        const spacesMoved = 5;
-        const newTopLeftArr = topLeftArr.map((element, i) => {
-            if (i === 0){
-                prevGridPoint = element
-                const result = newGridPoint(element[0], element[1], prevPosition, spacesMoved)
-                direction = result[1]
-                firstMove = result[0]
-                return result[0]
-            } else if (i < spacesMoved) {
-                // difference between the elements 
-                
-                const lastPoint = prevGridPoint
-                let top = lastPoint[0]
-                let left = lastPoint[1]
-                console.log(firstMove)
-                console.log(element)
-                console.log(firstMove[0] - element[0])
-                console.log(firstMove[1] - element[1])
-                if (firstMove[1] - element[1] === 0){
-                    if (direction === 0){
-                        // positive number
-                        console.log(firstMove[0] - 2 * i)
-                        top = firstMove[0] - 2 * i
-                    } else {
-                        console.log(firstMove[0] + 2 * i)
-                        // negative number
-                        top = firstMove[0] + 2 * i
-                    }
-                } else {
-                    if (direction === 1){
-                        // positive number
-                        console.log(firstMove[1] - 2 * i)
-                        left = firstMove[1] - 2 * i
-                    } else {
-                        // negative number
-                        console.log(firstMove[1] + 2 * i)
-                        left = firstMove[1] + 2 * i
-                    }
-                }
-
-                prevGridPoint = [top, left]
-                return [top, left]
-            } else {
-                const lastPoint = prevGridPoint
-                prevGridPoint = element
-                return lastPoint
-            }
-        })
+    const gridPointMove = (iteration, topLeftArr, prevPosition, j) => {
+        const newTopLeftArr = topLeftArr
+        let direction = prevPosition
+        if (iteration === 1){
+            const result = newGridPoint(topLeftArr[0][0], topLeftArr[0][1], prevPosition, false)
+            direction = result[1]
+            newTopLeftArr.unshift(result[0])
+            newTopLeftArr.pop()
+        } else {
+            const result = newGridPoint(topLeftArr[0][0], topLeftArr[0][1], prevPosition, true)
+            newTopLeftArr.unshift(result[0])
+            newTopLeftArr.pop()
+        }
         return [newTopLeftArr, direction]
     }
-    const loopThroughGridPoints = () => {
+    const loopThroughGridPoints = (iteration) => {
         setDivs(prev => (
-            prev.map((element, i) => {
-                const newGridPoint = gridPointMove(element[0], element[1])
+            prev.map((element, j) => {
+                const newGridPoint = gridPointMove(iteration, element[0], element[1], j)
                 return newGridPoint
             })
         ))
-        
     }
     const createCircuitry = () => {
+        let i = 1
         myInterval3 = setInterval(() => {
-            loopThroughGridPoints()
-        }, 1000)
+            if (i > stepsBeforeTurn) i = 1;
+            loopThroughGridPoints(i)
+            i++
+        }, 35)
     }
-
-
-
-
-
-
-
-
     useEffect(() => {
         createDivs()
         glitchOut()
