@@ -58,7 +58,8 @@ html, body {
 
 /* home / Main.js */
 .home {
-    background-image: repeating-linear-gradient(to right, silver 25%, rgb(90, 78, 78) 60%, silver);
+    /* background-image: repeating-linear-gradient(to right, silver 25%, rgb(90, 78, 78) 60%, silver); */
+    background-color: black;
     display: flex;
     flex-direction: column;
 }
@@ -67,11 +68,11 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 10px 2px black;
+    box-shadow: inset 0px 4px 10px 2px black;
     height: 250px;
     background-size: cover;
     background-position: center;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0.24, 0.51, 0.38, 1.51);
 }
@@ -108,18 +109,20 @@ html, body {
     letter-spacing: -4px;
     font-size: 43px;
     text-shadow: 2px 2px 3px black; */
-    font-family: Signature;
-    line-height: 60px;
-    letter-spacing: 2px;
-    font-size: 55px;
+    font-family: Rocket;
+    line-height: 40px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 35px;
     text-shadow: 1px 1px 4px black;
     padding: 6px;
 }
 .home > main > div {
-    font-family: Signature;
-    line-height: 60px;
-    letter-spacing: 2px;
-    font-size: 55px;
+    font-family: Rocket;
+    line-height: 40px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 35px;
     text-shadow: 1px 1px 4px black;
     padding: 6px;
 }
@@ -131,10 +134,11 @@ html, body {
     text-shadow: 2px 2px 5px black;
     padding-top: 9px;
     padding-right: 9px; */
-    font-family: Signature;
-    line-height: 60px;
-    letter-spacing: 2px;
-    font-size: 55px;
+    font-family: Rocket;
+    line-height: 40px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 35px;
     text-shadow: 1px 1px 4px black;
     padding: 6px;
 }
@@ -177,25 +181,13 @@ html, body {
     justify-content: center;
     align-items: center;
 }
-.webDevBetweenSections > div {
-    padding: 30px;
-    border-radius: 50%;
-    background-image: radial-gradient(rgba(77, 57, 255, 0.8) 45%, rgba(255, 255, 255, 0) 70%);
-}
-.webDevBetweenSections > div > h1 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
-    font-size: 32px;
-    color: rgb(255, 255, 255);
-}
 
 
 
 
 
 .webDevSectionContainer {
-    background-size: 100%;
+    background-size: auto 100%;
     background-position: center;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -206,7 +198,7 @@ html, body {
     padding-bottom: 25px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 
@@ -222,7 +214,7 @@ html, body {
     border-bottom: 1px solid blue;
 }
 .webDevSection > p {
-    font-size: 18px;
+    font-size: 19px;
 }
 
 
@@ -248,18 +240,6 @@ html, body {
     background-size: 140%;
     transition: all 1.40s cubic-bezier(1,1.44,.44,1.68) 0s;
 }
-.webDevBetweenSections1 > div {
-    padding: 30px;
-    border-radius: 50%;
-    background-image: radial-gradient(rgba(77, 57, 255, 0.8) 45%, rgba(255, 255, 255, 0) 70%);
-}
-.webDevBetweenSections1 > div > h1 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
-    font-size: 32px;
-    color: rgb(255, 255, 255);
-}
 
 
 
@@ -269,23 +249,18 @@ html, body {
     box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
     height: 250px;
     background-color: rgb(0, 0, 0);
-    /* background-image: url(./images/blue-circuit-png-2.png); */
+    background-image: url(./images/blue-circuit-png-2.png);
     background-size: auto 125%;
     background-repeat: no-repeat;
     background-position: 0% center;
-    
 }
 .webDevBetweenSections2 > aside {
     background-color: blue;
-    border-radius: 50%;
     height: 2px;
     width: 2px;
     position: relative;
 }
-.webDevBetweenSections2 > div {
-    background-color: blue;
-    position: relative;
-}
+
 
 
 
@@ -415,7 +390,6 @@ html, body {
     transition: all 2s cubic-bezier(0,2.5,.25,.96) 0s;
 }
 .contentHome > main {
-    /* display: none; */
     background-color: rgba(255, 255, 255, 0.35);
     border: 1px solid black;
     grid-column: 1/-1;
@@ -457,7 +431,6 @@ html, body {
 
 /* Header.js .header */
 .header {
-    /* height: 155px; */
     background-image: radial-gradient(rgb(0, 119, 255), black);
 }
 .header > div {
@@ -510,10 +483,7 @@ html, body {
     padding-top: 0px;
     margin-left: 64px;
 }
-/* .nav {
-    background-color: black;
-    height: 10px;
-} */
+
 
 
 
@@ -543,11 +513,11 @@ html, body {
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: grey;
+    background-image: radial-gradient(rgb(0, 119, 255), black);
+    
 }
 .footer > div {
     align-self: center;
-    padding: 3px;
 }
 .footer > div > p {
     text-align: center;
@@ -568,8 +538,8 @@ html, body {
     border-right: 1px solid rgba(0, 0, 0, 0.35);
 }
 .footer > main > div > a {
-    font-size: 15px;
-    line-height: 23px;
+    font-size: 14px;
+    padding-top: 5px;
     width: 100%;
     text-align: center;
     color: whitesmoke;
@@ -618,6 +588,12 @@ html, body {
         background-size: 425px;
         background-position: inherit;
     }
+    .webDevBetweenSections1_0 {
+        background-size: 420px;
+    }
+    .webDevBetweenSections1_1 {
+        background-size: 588px;
+    }
 }
 @media (min-width: 768px){
     /* home */
@@ -628,10 +604,13 @@ html, body {
     .home > * {
         flex: 1;
         overflow: hidden;
-        margin-left: 5px;
-        margin-right: 5px;
+        /* margin-left: 1px; */
+        margin-right: 1px;
         margin-bottom: 0px;
         height: 100%;
+    }
+    .home > *:last-child {
+        margin-right: 0px;
     }
     .expanded {
         flex: 2;
@@ -642,9 +621,46 @@ html, body {
     .header > div > aside > * {
         font-size: 36px;
     }
+    /* web dev */
+    .webFlexMove {
+        display: flex;
+        /* border-bottom: 1px solid black; */
+        /* margin-top: 10px */
+    }
+    .webFlexMove > main {
+        background-position: center;
+    }
+    .webDevSectionContainer {
+        background-size: auto 115%;
+        
+        flex: 2;
+        display: flex;
+        align-items: center;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .webDevBetweenSections {
+        height: 425px;
+        flex: 1;
+    }
+    .webDevBetweenSections1 {
+        height: 425px;
+        flex: 1;
+    }
+    .webDevBetweenSections2 {
+        height: 425px;
+        flex: 1;
+        background-position: -175px center;
+    }
 }
 @media (min-width: 1024px){
-    
+    /* web dev */
+    .webFlexMove > main {
+        background-size: auto 135%;
+    }
+    .webDevBetweenSections2 {
+        background-position: -150px center;
+    }
 }
 @media (min-width: 1440px){
 

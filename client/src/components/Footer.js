@@ -12,7 +12,7 @@ const Footer = props => {
                 </div>
                 <div>
                     <Link to="/holistic-healing">Holistic Healing</Link>
-                    {/* <Link to="/contact-us">Contact Us</Link> */}
+                    <Link to="/contact-us">Contact Us</Link>
                 </div>
             </main>
             <div>

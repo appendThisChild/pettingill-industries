@@ -45,6 +45,7 @@ const ContentCreationHome = props => {
         return randomNumber
     }
     useEffect(() => {
+        window.scroll(0,0)
         createDivs()
         createArt()
         return () => {

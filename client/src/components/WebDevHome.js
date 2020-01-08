@@ -3,53 +3,46 @@ import React, { useState, useEffect } from "react"
 //components
 import Footer from "./Footer.js"
 import Header from "./Header.js"
-import ContactForm from "./ContactForm.js"
 import WebDevSection1 from "./WebDevSection1.js"
 import WebDevSection2 from "./WebDevSection2.js"
 import WebDevSection3 from "./WebDevSection3.js"
 
 const WebDevHome = props => {
-    const [divs, setDivs] = useState([])
+    const [ divs, setDivs ] = useState([])
     const [ glitchObj, setGlitchObj ] = useState({ position: "50% 50%", size: "250%", timing: "cubic-bezier(.09,1.44,.17,.24)" })
     const [ pulsingSize, setPulsingSize ] = useState("webDevBetweenSections1_0")
-    const width = window.innerWidth
-    let numberOfLines;
-    if (width < 425){ numberOfLines = 15; } 
-    else if (width < 768){ numberOfLines = 20; } 
-    else if (width < 1024){ numberOfLines = 25; } 
-    else { numberOfLines = 30; }
+    let changeBorder = "";
+    let width = window.innerWidth
+    let height = 250;
+    let numberOfLines = 15;
+    if (width > 425 && width < 768){ numberOfLines = 20; } 
+    else if (width >= 768){ 
+        if (width > 1024) numberOfLines = 20;
+        width = width / 3;
+        height = 425;
+        changeBorder = "1px solid black"
+    } 
     const lineLengths = 75;
     const stepsBeforeTurn = 25;
     const lineSpeed = 50;
-    let myInterval1 = 0;
-    let myInterval2 = 0;
-    let myInterval3 = 0;
-
-    const handleSubmit = message => {
-        console.log(message)
-    }
-
+    const myIntervals = [];
+    const randomNumberGenerator = (num) => Math.floor(Math.random() * num)
     const changeBackground = num => {
-        const randomNum1 = Math.floor(Math.random() * 100)
-        const randomNum2 = Math.floor(Math.random() * 100)
-        const randomNum3 = Math.floor(Math.random() * 100)
-        const option1 = "cubic-bezier(1,.56,0,1.22)"
-        const option2 = "cubic-bezier(.95,.69,.19,1.95)"
-        const option3 = "cubic-bezier(.6,-0.95,0,1.17)"
-        const size = `${150 + randomNum1}%`
-        const position = `${randomNum2}% ${randomNum3}%`
-        let timing = `${option3}`;
-        if (num % 3 === 0){ timing = `${option1}`} 
-        else if (num % 2 === 0 ){ timing = `${option2}` }
+        const size = `${150 + randomNumberGenerator(100)}%`
+        const position = `${randomNumberGenerator(100)}% ${randomNumberGenerator(100)}%`
+        let timing = "cubic-bezier(.6,-0.95,0,1.17)";
+        if (num % 3 === 0){ timing = "cubic-bezier(1,.56,0,1.22)"} 
+        else if (num % 2 === 0 ){ timing = "cubic-bezier(.95,.69,.19,1.95)" }
         setGlitchObj({ position, size, timing })
     }
     const glitchOut = () => {
         let i = 1
         changeBackground(i)
-        myInterval1 = setInterval(() => {
+        const myInterval = setInterval(() => {
             changeBackground(i++)
             if (i > 3) i = 1;
         }, 2250);
+        myIntervals.push(myInterval)
     }
     const pulsing = i => {
         if (i === 0){ setPulsingSize("webDevBetweenSections1_1") } 
@@ -58,18 +51,17 @@ const WebDevHome = props => {
     const pulse = () => {
         let i = 0
         pulsing(i)
-        myInterval2 = setInterval(() => {
+        const myInterval = setInterval(() => {
             if ( i === 0){ pulsing(i++) } 
             else { pulsing(i--) }
         }, 1400)
+        myIntervals.push(myInterval)
     }
     const createDivs = () => {
         let divArr = []
         for (let i = 0; i < numberOfLines; i++){
             const insideArr = []
-            const randomNum1 = Math.floor(Math.random() * 248)
-            const randomNum2 = Math.floor(Math.random() * width - 2)
-            insideArr.push([randomNum1, randomNum2])
+            insideArr.push([randomNumberGenerator(height - 2), randomNumberGenerator(width - 2)])
             divArr.push([insideArr, null])
         }
         setDivs(divArr)
@@ -77,23 +69,22 @@ const WebDevHome = props => {
     const numberBetween1And4ExceptFor = (num) => {
         let reverseDirection;
         if (num !== null) reverseDirection = num > 1 ? num - 2 : num + 2;
-        const randomNum = Math.floor(Math.random() * 4)
+        const randomNum = randomNumberGenerator(4)
         if (reverseDirection === randomNum){ return numberBetween1And4ExceptFor(num) } 
         else { return randomNum }
     }
     const newGridPoint = (top, left, prevPosition, sameDirection) => {
-        const width = window.innerWidth
         let direction = prevPosition;
         if (!sameDirection) direction = numberBetween1And4ExceptFor(prevPosition);
         let newTop = top;
         let newLeft = left;
         if (direction === 0 || direction === 2) {
             const upDownMove = direction === 0 ? top + 2 : top - 2
-            if (upDownMove > 248 || upDownMove < 0){ newTop = upDownMove > 248 ? upDownMove - 250 : upDownMove + 250 } 
+            if (upDownMove > height - 2 || upDownMove < 0){ newTop = upDownMove > height - 2 ? upDownMove - height + 2 : upDownMove + height - 2 } 
             else { newTop = upDownMove }
         } else {
             const leftRightMove = direction === 1 ? left + 2 : left - 2
-            if (leftRightMove > width || leftRightMove < 0) { newLeft = leftRightMove > width ? leftRightMove - width : leftRightMove + width } 
+            if (leftRightMove > width - 2 || leftRightMove < 0) { newLeft = leftRightMove > width - 2 ? leftRightMove - width + 2 : leftRightMove + width - 2 } 
             else { newLeft = leftRightMove }
         }
         return [[newTop, newLeft], direction]
@@ -110,21 +101,19 @@ const WebDevHome = props => {
     const loopThroughGridPoints = (iteration) => setDivs(prev => prev.map(element => gridPointMove(iteration, element[0], element[1])))
     const createCircuitry = () => {
         let i = 1
-        myInterval3 = setInterval(() => {
+        const myInterval = setInterval(() => {
             loopThroughGridPoints(i++)
             if (i > stepsBeforeTurn) i = 1;
         }, lineSpeed)
+        myIntervals.push(myInterval)
     }
     useEffect(() => {
+        window.scroll(0,0)
         createDivs()
         glitchOut()
         pulse()
         createCircuitry()
-        return () => {
-            clearInterval(myInterval1)
-            clearInterval(myInterval2)
-            clearInterval(myInterval3)
-        }
+        return () => myIntervals.forEach(interval => clearInterval(interval))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const mappedDivArr = divs.map((element1 , i) => {
@@ -138,47 +127,18 @@ const WebDevHome = props => {
     return(
         <>
         <Header />
-        <div className="webDevBetweenSections2">
-            {mappedDivArr}
-            {/* <div>
-                something
-            </div> */}
+        <div className="webFlexMove" style={{ borderBottom: changeBorder}}>
+            <div className="webDevBetweenSections2">{mappedDivArr}</div>
+            <WebDevSection1 open={changeBorder === "" ? false : true}/>
         </div>
-        <WebDevSection1 />
-        <div className={`webDevBetweenSections1 ${pulsingSize}`} >
-            <div>
-                <h1>Streamlining</h1>
-                <h1>Vital Processes</h1>
-            </div>
+        <div className="webFlexMove" style={{ flexDirection: 'row-reverse', borderBottom: changeBorder}}>
+            <div className={`webDevBetweenSections1 ${pulsingSize}`} ></div>
+            <WebDevSection2 open={changeBorder === "" ? false : true}/>
         </div>
-        <WebDevSection2 />
-        <div className="webDevBetweenSections" style={{ backgroundPosition: glitchObj.position, backgroundSize: `${glitchObj.size}`, transition: `all 2.25s ${glitchObj.timing} 0s`}}>
-            <div>
-                <h1>Reclaiming</h1>
-                <h1>Imaginative Design</h1>
-            </div>
+        <div className="webFlexMove">
+            <div className="webDevBetweenSections" style={{ backgroundPosition: glitchObj.position, backgroundSize: `auto ${glitchObj.size}`, transition: `all 2.25s ${glitchObj.timing} 0s`}}></div>
+            <WebDevSection3 open={changeBorder === "" ? false : true}/>
         </div>
-        <WebDevSection3 />
-        <ContactForm 
-            className="webForm"
-            questions={[
-            {
-                question: "Name",
-                tag: "input",
-                objTag: "name"
-            },
-            {
-                question: "Email Address",
-                tag: "input",
-                objTag: "email"
-            },
-            {
-                question: "Message",
-                tag: "textarea",
-                objTag: "message"
-            }
-            ]}
-            handleSubmit={handleSubmit} />
         <Footer />
         </>
     )
