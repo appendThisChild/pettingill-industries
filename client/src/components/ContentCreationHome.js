@@ -10,47 +10,40 @@ const ContentCreationHome = props => {
     const [divs, setDivs] = useState([])
     let myInterval = 0;
 
+    const randomNumberGenerator = (num) => Math.floor(Math.random() * num)
     const createDivs = () => {
-        let divArr = []
+        const divArr = []
         for (let i = 0; i < 100; i++){
-            divArr.push("")
+            const insideArr = [];
+            for (let j = 0; j < 4; j++){ insideArr.push(randomNumberGenerator(400) + 50) }
+            divArr.push(insideArr)
         }
         setDivs(divArr)
     }
     const createArt = () => {
         tripleFlash()
-        myInterval = setInterval(() => {
-            tripleFlash() 
-        }, 2000);
+        myInterval = setInterval(() => { tripleFlash() }, 2500);
     }
-    const tripleFlash = () => {
-        for (let i = 0; i < 3; i++){
-            setTimeout(() => {
-                openExplosion()
-            }, 350 * (i + 1))
-        }
-    }
-    const openExplosion = (isTrue) => {
-        setExplosion(prev => ([
-            randomNumberBetween0and100(prev),
-            prev[0],
-            prev[1],
-        ]))
-    }
+    const tripleFlash = () => { for (let i = 0; i < 5; i++){ setTimeout(() => { openExplosion() }, 400 * (i + 1)) } }
+    const openExplosion = (isTrue) => { setExplosion(prev => ([randomNumberBetween0and100(prev), prev[0], prev[1]])) }
     const randomNumberBetween0and100 = (array) => {
-        let randomNumber = Math.floor(Math.random() * 100)
-        if (array.some((number) => number === randomNumber)){
-            return randomNumberBetween0and100(array)
-        }
+        const randomNumber = randomNumberGenerator(100)
+        if (array.some((number) => number === randomNumber)) return randomNumberBetween0and100(array);
         return randomNumber
+    }
+    const shineSide = (column, row, degree) => {
+        let result = false;
+        if (degree === 0){ if (column < 5) result = true; }
+        else if (degree === 1){ if (column < 5 && row < 5) result = true; }
+        else if (degree === 2){ if (row < 5) result = true; }
+        else if (degree === 3){ if (column >= 5 && row < 5) result = true; }
+        return result
     }
     useEffect(() => {
         window.scroll(0,0)
         createDivs()
         createArt()
-        return () => {
-            clearInterval(myInterval)
-        }
+        return () => clearInterval(myInterval);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -59,33 +52,15 @@ const ContentCreationHome = props => {
         const column = Number((num % 1).toFixed(1)) * 10
         const row = Math.floor(num)
         const isExplosion = explosion.some((number) => number === i)
-        
+        const highestNumber = element.sort((a, b) => b - a)
         if (!isExplosion){
-            return(
-                <div 
-                    key={i} 
-                    className='gridPoint'
-                    style={{
-                        gridColumn: `${column + 1}/${column + 2}`,
-                        gridRow: `${row + 1}/${row + 2}`
-                    }}
-                    >
-                    <div className="stillGridPoint"></div>
-                </div>
-            )
+            const mappedElements = element.map((width, j) => <div key={j + 2000} style={{ transform: `rotate(${j * 45}deg)`}}>{shineSide(column, row, j) ? <><section style={{ flex: `1`}}></section><div style={{ flex: `2`}}></div></> : <><div style={{ flex: `2`}}></div><section style={{ flex: `1`}}></section></>}</div>)
+            const reMappedDivs = divs.map((element, k) => <aside key={k + 3000} style={{ transform: `rotate(${k / 100 * 360}deg)`, width: "0px"}}></aside>)
+            return <div key={i + 4000} className='gridPoint' style={{ gridColumn: `${column + 1}/${column + 2}`, gridRow: `${row + 1}/${row + 2}`}}><div className="stillGridPoint">{mappedElements}{reMappedDivs}</div></div>
         } else {
-            return(
-                <div 
-                    key={i} 
-                    className='gridPoint'
-                    style={{
-                        gridColumn: `${column + 1}/${column + 2}`,
-                        gridRow: `${row + 1}/${row + 2}`
-                    }}
-                    >
-                    <div className="explosionGridPoint"></div>
-                </div>
-            )
+            const mappedElements = element.map((width, j) => <div key={j + 2000} style={{ transform: `rotate(${j * 45}deg)`, width: `${width}px`}}>{shineSide(column, row, j) ? <><section style={{ flex: `1`}}></section><div style={{ flex: `2`}}></div></> : <><div style={{ flex: `2`}}></div><section style={{ flex: `1`}}></section></>}</div>)
+            const reMappedDivs = divs.map((element, k) => <aside key={k + 3000} style={{ transform: `rotate(${k / 100 * 360}deg)`, width: `${highestNumber[0] / 5 + 25}px`, height: "1px"}}></aside>)
+            return <div key={i + 4000} className='gridPoint' style={{ gridColumn: `${column + 1}/${column + 2}`, gridRow: `${row + 1}/${row + 2}`}}><div className="explosionGridPoint" style={{ width: `${highestNumber[0] / 5}px`, height: `${highestNumber[0] / 5}px`}}>{mappedElements}{reMappedDivs}</div></div>
         }
         
     })
@@ -97,16 +72,19 @@ const ContentCreationHome = props => {
             {mappedDivArr}
             <main>
                 <div>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
-                    <p>Something</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
+                    <p>Text Here...</p>
                 </div>
             </main>
 
