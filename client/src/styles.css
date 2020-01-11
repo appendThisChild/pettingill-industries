@@ -359,12 +359,15 @@ html, body {
 
 
 /* ContentCreationHome .contentHome */
-.contentHome {
+.starBurst {
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 1fr);
     overflow: hidden;
-    background-color: rgb(103, 103, 255);
+    /* background-color: rgb(103, 103, 255); */
+    background-image: url(./images/Orion.jpg);
+    /* background-image: url(./images/Startrails.jpg); */
+    background-size: 100%;
     height: 250px;
 }
 .gridPoint {
@@ -380,7 +383,7 @@ html, body {
     height: 0px;
     width: 0px;
     position: absolute;
-    transition: all 5s cubic-bezier(.05,.57,.05,1.12) 0s;
+    transition: all 10s cubic-bezier(.05,.57,.05,1.12) 0s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -392,7 +395,7 @@ html, body {
     background-position: center;
     width: 0px;
     height: 0px;
-    transition: all 5s cubic-bezier(.05,.57,.05,1.12) 0s;
+    transition: all 10s cubic-bezier(.05,.57,.05,1.12) 0s;
     display: flex;
     align-items: center;
 }
@@ -436,16 +439,7 @@ html, body {
     background-image: radial-gradient(white 30%, transparent 72%);
     height: 7px;
 }
-
-
-
-
-
-
-
-
-
-.contentHome > main {
+.starBurst > main {
     display: none;
     background-color: rgba(255, 255, 255, 0.75);
     border: 1px solid black;
@@ -457,6 +451,30 @@ html, body {
     margin-bottom: 20px;
 }
 
+
+
+
+
+.slideShow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 2000px;
+}
+.slideShow > img {
+    border-radius: 3px;
+    background-size: 100%;
+    box-shadow: 0px 5px 10px 1px black;
+}
+.slideShow > img:first-child {
+    transform: rotateY(-30deg);
+    box-shadow: 5px 5px 10px 1px black;
+}
+.slideShow > img:last-child {
+    transform: rotateY(30deg);
+    box-shadow: -5px 5px 10px 1px black;
+}
 
 
 
