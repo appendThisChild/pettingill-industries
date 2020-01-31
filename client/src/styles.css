@@ -23,14 +23,6 @@ html, body {
     font-family: SocialIcons;
     src: url(./fonts/socialMedia.ttf)
 }
-/* @font-face {
-    font-family: Candle-Script;
-    src: url(./fonts/Candlescript_Demo_Version.otf)
-} */
-/* @font-face {
-    font-family: Aldith-Italic;
-    src: url(./fonts/ALDITHItalic.ttf)
-} */
 @font-face {
     font-family: Signature;
     src: url(./fonts/Photograph_Signature.ttf)
@@ -58,7 +50,6 @@ html, body {
 
 /* home / Main.js */
 .home {
-    /* background-image: repeating-linear-gradient(to right, silver 25%, rgb(90, 78, 78) 60%, silver); */
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -104,11 +95,6 @@ html, body {
 }
 /* texts/links */
 .home > section > div {
-    /* font-family: Rocket;
-    line-height: 35px;
-    letter-spacing: -4px;
-    font-size: 43px;
-    text-shadow: 2px 2px 3px black; */
     font-family: Rocket;
     line-height: 40px;
     font-weight: 900;
@@ -127,13 +113,6 @@ html, body {
     padding: 6px;
 }
 .home > article > div {
-    /* font-family: Candle-Script;
-    line-height: 55px;
-    letter-spacing: 2px;
-    font-size: 44px;
-    text-shadow: 2px 2px 5px black;
-    padding-top: 9px;
-    padding-right: 9px; */
     font-family: Rocket;
     line-height: 40px;
     font-weight: 900;
@@ -159,6 +138,150 @@ html, body {
 
 
 
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* =========Contact========= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+.contact {
+    background-image: url(./images/ink-texture-background-14.jpg);
+    /* background-image: url(./images/old-yellow-wall-texture-background.jpg); */
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0px 0px 13px 5px black;
+}
+.contact > div {
+    background-image: url(./images/Hbil3Joe_9vKJe0Kr3tH8vuDYhyBFF4AFbvkbfiJL_A.png);
+    background-size: 1000px;
+    /* background-position: center; */
+    padding: 25px;
+}
+
+
+
+
+
+
+.contactSection {
+    background-color: rgba(255, 255, 255, 0.90);
+    padding: 25px;
+    margin-bottom: 25px;
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.contactSection > h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 33px;
+    letter-spacing: .5px;
+
+    margin-bottom: 10px;
+}
+.contactSection > ul {
+    margin-top: 25px;
+    padding-left: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+.contactSection > ul > li {
+    padding-bottom: 25px;
+}
+.contactSection > ul > li:last-child {
+    padding-bottom: 0px;
+}
+
+
+
+
+
+.webForm {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+
+    background-color: rgba(0, 0, 0, 0.90);
+    /* margin: 25px; */
+    padding: 25px;
+
+}
+.webForm > h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+}
+.webForm > * {
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+.webForm > *:last-child {
+    margin-bottom: 0px;
+}
+.webForm > input {
+    width: 99%;
+
+    background-color: transparent;
+    border: 0px; 
+    border-bottom: 1px solid white;
+
+    font-size: 26px;
+    color: white;
+    text-indent: 3px;
+}
+.webForm > textarea {
+    width: 99%;
+    height: 175px;
+
+    border: 1px solid black;
+
+    font-size: 24px;
+    text-indent: 3px;
+}
+.webForm > button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid black;
+    background-color: rgb(88, 202, 255);
+
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.webForm > button > span {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    line-height: 28px;
+}
+.webForm > button > span > span {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* =========Contact========= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
 
 /* ========================= */
 /* ========================= */
@@ -174,9 +297,9 @@ html, body {
 
 /* WebDevHome .webHome */
 .webDevBetweenSections {
-    box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
+    box-shadow: inset 0px 0px 15px 5px rgb(80, 80, 80);
     background-image: url("./images/code.jpg");
-    height: 250px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,34 +310,29 @@ html, body {
 
 
 .webDevSectionContainer {
-    background-size: auto 100%;
-    background-position: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
- .webDevSection {
-    margin: 10px;
-    padding-top: 10px;
-    padding-bottom: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    padding: 25px;
 
+    background-size: cover;
+    background-position: center;
+}
+.webDevSection {
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .webDevSection > h1 {
-    padding-top: 7px;
-    padding-bottom: 8px;
+    padding-bottom: 15px;
     margin-bottom: 25px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
-    font-size: 35px;
-    line-height: 28px;
+    font-size: 40px;
+    letter-spacing: 1.25px;
+    line-height: 40px;
     border-bottom: 1px solid blue;
 }
 .webDevSection > p {
-    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    letter-spacing: 1.25px;
 }
 
 
@@ -224,7 +342,7 @@ html, body {
     box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
     background-image: url(./images/be55770577d53fb0bac13f5eba5ea3d7.png);
     background-position: center;
-    height: 250px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,7 +365,7 @@ html, body {
 
 .webDevBetweenSections2 {
     box-shadow: inset 0px 0px 20px 3px rgb(80, 80, 80);
-    height: 250px;
+    height: 300px;
     background-color: rgb(0, 0, 0);
     background-image: url(./images/blue-circuit-png-2.png);
     background-size: auto 125%;
@@ -256,79 +374,7 @@ html, body {
 }
 .webDevBetweenSections2 > aside {
     background-color: blue;
-    height: 2px;
-    width: 2px;
     position: relative;
-}
-
-
-
-
-.webForm {
-    background-color: rgb(32, 32, 190);
-    margin: 3px;
-    padding: 5px;
-    border-radius: 10px;
-    border: outset 3px rgb(32, 32, 190); 
-}
-.webForm > h3 {
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 500;
-    font-size: 37px;
-    text-align: center;
-    border-bottom: 1px solid white;
-}
-.webForm > div {
-    margin-bottom: 15px;
-}
-.webForm > div > * {
-    font-family: auto;
-    font-size: 21px;
-}
-.webForm > div > p {
-    margin-bottom: 3px;
-}
-.webForm > div > input {
-    width: 98%;
-    background-color: whitesmoke;
-    border: inset 3px rgb(32, 32, 190); 
-    border-radius: 5px;
-    padding: 2px;
-    text-indent: 3px;
-}
-.webForm > div > textarea {
-    width: 98%;
-    height: 150px;
-    background-color: whitesmoke;
-    border: inset 3px rgb(32, 32, 190); 
-    border-radius: 5px;
-    padding: 2px;
-    text-indent: 3px;
-}
-.webForm > div:nth-last-child(2) {
-    margin-bottom: 0px;
-}
-.webForm > button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-    border-radius: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.webForm > button > span {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    
-}
-.webForm > button > span > span {
-    font-family: auto;
-    font-size: 21px;
-    padding-left: 5px;
 }
 
 
@@ -359,13 +405,11 @@ html, body {
 
 
 /* ContentCreationHome .contentHome */
-.starBurst {
+/* .starBurst {
     display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 1fr);
     overflow: hidden;
-    background-image: url(./images/Orion.jpg);
-    /* background-image: url(./images/Startrails.jpg); */
     background-size: cover;
     background-position: center;
     height: 250px;
@@ -405,7 +449,7 @@ html, body {
 .stillGridPoint > div > div {
     background-image: radial-gradient(white 30%, transparent 72%);
     height: 0px;
-}
+} */
 
 
 
@@ -413,7 +457,7 @@ html, body {
 
 
 
-.explosionGridPoint {
+/* .explosionGridPoint {
     background-image: radial-gradient(white 15%, transparent 72%);
     position: absolute;
     transition: all 5s cubic-bezier(0,2.5,.25,.96) 0s;
@@ -442,7 +486,7 @@ html, body {
 .starBurst > main {
     grid-column: 1/-1;
     grid-row: 1/-1;
-}
+} */
 
 
 
@@ -475,10 +519,10 @@ html, body {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 50%;
     text-align: center;
-    font-size: 25px;
-    width: 25px;
-    height: 25px;
-    line-height: 26px;
+    font-size: 30px;
+    width: 33px;
+    height: 33px;
+    line-height: 34px;
     cursor: pointer;
 }
 .slideShow > div > span:first-child {
@@ -528,18 +572,64 @@ html, body {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     text-align: center;
-    font-size: 20px;
-    width: 28px;
-    height: 28px;
-    line-height: 29px;
+    font-size: 28px;
+    width: 34px;
+    height: 34px;
+    line-height: 37px;
     position: absolute;
     top: 0;
-    left: 0;
     margin: 20px;
 }
 
 
 
+
+
+
+
+.contentCreationSectionContainer {
+    /* background-size: auto 100%;
+    background-position: center; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.contentCreationSection {
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+}
+.contentCreationSection > h1 {
+    padding-top: 7px;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 1.25px;
+    line-height: 40px;
+    border-bottom: 1px solid tan;
+}
+.contentCreationSection > p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    letter-spacing: 1.25px;
+}
+.contentCreationSection > ul {
+    padding-left: 25px;
+}
+.contentCreationSection > ul > li {
+    padding-top: 15px;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    letter-spacing: 1.25px;
+}
 
 
 
@@ -582,8 +672,8 @@ html, body {
 .header > div > div > * {
     font-family: Rocket;
     font-weight: 900;
-    font-size: 35px;
-    line-height: 35px;
+    font-size: 40px;
+    line-height: 38px;
     color: white;
 }
 .header > div > aside {
@@ -610,17 +700,17 @@ html, body {
     color: black;
 }
 .header > div > div > span {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 0px;
     margin-left: 264px;
 }
 .header > div > div > p:first-child {
     padding-top: 33px;
-    margin-left: 28px;
+    margin-left: 5%;
 }
 .header > div > div > p:nth-child(2) {
     padding-top: 0px;
-    margin-left: 64px;
+    margin-left: 15%;
 }
 
 
@@ -699,7 +789,7 @@ html, body {
 
 
 
-@media (min-width: 425px){
+@media (min-width: 426px){
     /* home */
     .home > * {
         height: 375px;
@@ -720,18 +810,32 @@ html, body {
         font-size: 35px;
     }
     .header > div {
-        background-size: 425px;
+        background-size: 426px;
     }
     /* web dev */
-    .webDevSectionContainer {
-        background-size: 425px;
-        background-position: inherit;
-    }
     .webDevBetweenSections1_0 {
         background-size: 420px;
     }
     .webDevBetweenSections1_1 {
         background-size: 588px;
+    }
+
+
+
+
+
+    .contact > div > * {
+        box-shadow: 1px 2px 8px 1px black;
+    }
+
+
+
+
+    .header > div > div > p:first-child {
+        margin-left: 15%;
+    }
+    .header > div > div > p:nth-child(2) {
+        margin-left: 35%;
     }
 }
 @media (min-width: 768px){
@@ -763,33 +867,50 @@ html, body {
     /* web dev */
     .webFlexMove {
         display: flex;
-        /* border-bottom: 1px solid black; */
-        /* margin-top: 10px */
-    }
-    .webFlexMove > main {
-        background-position: center;
     }
     .webDevSectionContainer {
-        background-size: auto 115%;
-        
         flex: 2;
         display: flex;
         align-items: center;
-        padding-top: 0px;
-        padding-bottom: 0px;
+        justify-content: center;
+        padding: 0px;
+        height: 550px;
+    }
+    .webDevSectionContainer > * {
+        margin-left: 25px;
+        margin-right: 25px;
     }
     .webDevBetweenSections {
-        height: 425px;
+        height: 550px;
         flex: 1;
     }
     .webDevBetweenSections1 {
-        height: 425px;
+        height: 550px;
         flex: 1;
     }
     .webDevBetweenSections2 {
-        height: 425px;
+        height: 550px;
         flex: 1;
-        background-position: -175px center;
+        background-position: -225px center;
+    }
+
+
+
+
+
+    .contact > div {
+        display: flex;
+        align-items: center;
+    }
+    .contact > div > * {
+        flex: 1;
+    }
+    .contact > div > *:first-child {
+        margin-right: 12.5px;
+        margin-bottom: 0px;
+    }
+    .contact > div > *:last-child {
+        margin-left: 12.5px;
     }
 }
 @media (min-width: 1024px){
@@ -806,6 +927,14 @@ html, body {
     }
     .slideShow > div > span:last-child {
         margin-right: 45px;
+    }
+
+
+    .header > div > div > p:first-child {
+        margin-left: 35%;
+    }
+    .header > div > div > p:nth-child(2) {
+        margin-left: 55%;
     }
 }
 @media (min-width: 1440px){

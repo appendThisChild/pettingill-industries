@@ -16,7 +16,7 @@ const Footer = props => {
                 </div>
             </main>
             <div>
-                <p>&#169; 2019 Pettingill Industries, All rights reserved.</p>
+                <p>&#169; {new Date().getFullYear()} Pettingill Industries, All rights reserved.</p>
             </div>
         </footer>
     )

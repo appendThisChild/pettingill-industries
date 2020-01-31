@@ -1,13 +1,11 @@
 import React, { useState } from "react"
 
-const ContactForm = ({ questions, handleSubmit, className }) => {
-    const [info, setInfo] = useState({})
+const ContactForm = ({ questions, state, handleSubmit, className }) => {
+    const [info, setInfo] = useState(state)
     const handleChange = e => {
-        const name = e.target.name
-        const value = e.target.value
         setInfo({
             ...info,
-            [name]: value
+            [e.target.name]: e.target.value
         })
     }
     const preSubmit = e => {
@@ -26,20 +24,15 @@ const ContactForm = ({ questions, handleSubmit, className }) => {
         })
         handleSubmit(message)
     }
+
     const questionsMapped = questions.map((q, i) => {
         if (q.tag === "input"){
             return(
-                <div key={i}>
-                    <p>{q.question}</p>
-                    <input type="text" name={q.objTag} value={info[q.objTag]} onChange={handleChange} required={true} />
-                </div>
+                <input key={i} type="text" name={q.objTag} value={info[q.objTag]} onChange={handleChange} required={true} placeholder={`${q.question}...`} />
             )  
         } else if (q.tag === "textarea") {
             return(
-                <div key={i}>
-                    <p>{q.question}</p>
-                    <textarea name={q.objTag} value={info[q.objTag]} onChange={handleChange} required={q.objTag === "other" ? false : true}/>
-                </div>
+                <textarea key={i} name={q.objTag} value={info[q.objTag]} onChange={handleChange} required={q.objTag === "other" ? false : true} placeholder={`${q.question}...`}/>
             ) 
         } else {
             return null
@@ -49,7 +42,7 @@ const ContactForm = ({ questions, handleSubmit, className }) => {
         <form className={className} onSubmit={preSubmit}>
             <h3>Contact Us!</h3>
             {questionsMapped}
-            <button><span>&#x2609; <span>Send</span></span></button>
+            <button><span>&#x2607;<span>Send</span></span></button>
         </form>
     )
 }

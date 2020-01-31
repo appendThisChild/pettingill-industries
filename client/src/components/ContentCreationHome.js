@@ -8,6 +8,8 @@ import ImageZoom from "./ImageZoom.js"
 
 // providers
 import { ImageZoomProvider } from "../context/ImageZoomProvider.js"
+import ContentCreationSection1 from "./ContentCreationSection1.js"
+import ContentCreationSection2 from "./ContentCreationSection2.js"
 
 const ContentCreationHome = props => {
 
@@ -21,8 +23,9 @@ const ContentCreationHome = props => {
             <ImageZoomProvider>
                 <ImageZoom />
                 <Header />
+                <ContentCreationSection1 />
                 <SlideShow />
-
+                <ContentCreationSection2 />
                 <Footer />
             </ImageZoomProvider>
         </>

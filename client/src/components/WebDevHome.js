@@ -9,41 +9,42 @@ import WebDevSection3 from "./WebDevSection3.js"
 
 const WebDevHome = props => {
     const [ divs, setDivs ] = useState([])
-    const [ glitchObj, setGlitchObj ] = useState({ position: "50% 50%", size: "250%", timing: "cubic-bezier(.09,1.44,.17,.24)" })
+    // const [ glitchObj, setGlitchObj ] = useState({ position: "50% 50%", size: "250%", timing: "cubic-bezier(.09,1.44,.17,.24)" })
     const [ pulsingSize, setPulsingSize ] = useState("webDevBetweenSections1_0")
     let changeBorder = "";
     let width = window.innerWidth
-    let height = 250;
+    let height = 300;
     let numberOfLines = 15;
     if (width > 425 && width < 768){ numberOfLines = 20; } 
     else if (width >= 768){ 
         if (width > 1024) numberOfLines = 20;
         width = width / 3;
-        height = 425;
+        height = 550;
         changeBorder = "1px solid black"
     } 
     const lineLengths = 75;
     const stepsBeforeTurn = 25;
     const lineSpeed = 50;
+    const dotSize = 2;
     const myIntervals = [];
     const randomNumberGenerator = (num) => Math.floor(Math.random() * num)
-    const changeBackground = num => {
-        const size = `${150 + randomNumberGenerator(100)}%`
-        const position = `${randomNumberGenerator(100)}% ${randomNumberGenerator(100)}%`
-        let timing = "cubic-bezier(.6,-0.95,0,1.17)";
-        if (num % 3 === 0){ timing = "cubic-bezier(1,.56,0,1.22)"} 
-        else if (num % 2 === 0 ){ timing = "cubic-bezier(.95,.69,.19,1.95)" }
-        setGlitchObj({ position, size, timing })
-    }
-    const glitchOut = () => {
-        let i = 1
-        changeBackground(i)
-        const myInterval = setInterval(() => {
-            changeBackground(i++)
-            if (i > 3) i = 1;
-        }, 2250);
-        myIntervals.push(myInterval)
-    }
+    // const changeBackground = num => {
+    //     const size = `${150 + randomNumberGenerator(100)}%`
+    //     const position = `${randomNumberGenerator(100)}% ${randomNumberGenerator(100)}%`
+    //     let timing = "cubic-bezier(.6,-0.95,0,1.17)";
+    //     if (num % 3 === 0){ timing = "cubic-bezier(1,.56,0,1.22)"} 
+    //     else if (num % 2 === 0 ){ timing = "cubic-bezier(.95,.69,.19,1.95)" }
+    //     setGlitchObj({ position, size, timing })
+    // }
+    // const glitchOut = () => {
+    //     let i = 1
+    //     changeBackground(i)
+    //     const myInterval = setInterval(() => {
+    //         changeBackground(i++)
+    //         if (i > 3) i = 1;
+    //     }, 2250);
+    //     myIntervals.push(myInterval)
+    // }
     const pulsing = i => {
         if (i === 0){ setPulsingSize("webDevBetweenSections1_1") } 
         else { setPulsingSize("webDevBetweenSections1_0") }
@@ -61,7 +62,7 @@ const WebDevHome = props => {
         let divArr = []
         for (let i = 0; i < numberOfLines; i++){
             const insideArr = []
-            insideArr.push([randomNumberGenerator(height - 2), randomNumberGenerator(width - 2)])
+            insideArr.push([randomNumberGenerator(height - dotSize), randomNumberGenerator(width - dotSize)])
             divArr.push([insideArr, null])
         }
         setDivs(divArr)
@@ -79,12 +80,12 @@ const WebDevHome = props => {
         let newTop = top;
         let newLeft = left;
         if (direction === 0 || direction === 2) {
-            const upDownMove = direction === 0 ? top + 2 : top - 2
-            if (upDownMove > height - 2 || upDownMove < 0){ newTop = upDownMove > height - 2 ? upDownMove - height + 2 : upDownMove + height - 2 } 
+            const upDownMove = direction === 0 ? top + dotSize : top - dotSize
+            if (upDownMove > height - dotSize || upDownMove < 0){ newTop = upDownMove > height - dotSize ? upDownMove - height + dotSize : upDownMove + height - dotSize } 
             else { newTop = upDownMove }
         } else {
-            const leftRightMove = direction === 1 ? left + 2 : left - 2
-            if (leftRightMove > width - 2 || leftRightMove < 0) { newLeft = leftRightMove > width - 2 ? leftRightMove - width + 2 : leftRightMove + width - 2 } 
+            const leftRightMove = direction === 1 ? left + dotSize : left - dotSize
+            if (leftRightMove > width - dotSize || leftRightMove < 0) { newLeft = leftRightMove > width - dotSize ? leftRightMove - width + dotSize : leftRightMove + width - dotSize } 
             else { newLeft = leftRightMove }
         }
         return [[newTop, newLeft], direction]
@@ -110,7 +111,7 @@ const WebDevHome = props => {
     useEffect(() => {
         window.scroll(0,0)
         createDivs()
-        glitchOut()
+        // glitchOut()
         pulse()
         createCircuitry()
         return () => myIntervals.forEach(interval => clearInterval(interval))
@@ -119,26 +120,27 @@ const WebDevHome = props => {
     const mappedDivArr = divs.map((element1 , i) => {
         return element1[0].map((element2, j) => {
             const arrLength = element1[0].length
-            const adjustment = (j + (i * arrLength)) * 2
+            const adjustment = (j + (i * arrLength)) * dotSize
             const fade = 1 - (j / arrLength)
-            return <aside key={`${i}.${j}`} style={{ top: `${element2[0] - adjustment}px`, left: `${element2[1]}px`, opacity: `${fade}`}}></aside>
+            return <aside key={`${i}.${j}`} style={{ top: `${element2[0] - adjustment}px`, left: `${element2[1]}px`, opacity: `${fade}`, height: `${dotSize}px`, width: `${dotSize}px`}}></aside>
         })
     })
     return(
         <>
         <Header />
-        <div className="webFlexMove" style={{ borderBottom: changeBorder}}>
+        <div className="webFlexMove" >
             <div className="webDevBetweenSections2">{mappedDivArr}</div>
             <WebDevSection1 open={changeBorder === "" ? false : true}/>
         </div>
-        <div className="webFlexMove" style={{ flexDirection: 'row-reverse', borderBottom: changeBorder}}>
+        <div className="webFlexMove">
+            {/* <div className="webDevBetweenSections" style={{ backgroundPosition: glitchObj.position, backgroundSize: `auto ${glitchObj.size}`, transition: `all 2.25s ${glitchObj.timing} 0s`}}></div> */}
+            <WebDevSection3 open={changeBorder === "" ? false : true}/>
+        </div>
+        <div className="webFlexMove" style={{ flexDirection: 'row-reverse'}}>
             <div className={`webDevBetweenSections1 ${pulsingSize}`} ></div>
             <WebDevSection2 open={changeBorder === "" ? false : true}/>
         </div>
-        <div className="webFlexMove">
-            <div className="webDevBetweenSections" style={{ backgroundPosition: glitchObj.position, backgroundSize: `auto ${glitchObj.size}`, transition: `all 2.25s ${glitchObj.timing} 0s`}}></div>
-            <WebDevSection3 open={changeBorder === "" ? false : true}/>
-        </div>
+        
         <Footer />
         </>
     )

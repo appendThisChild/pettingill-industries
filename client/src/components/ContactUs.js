@@ -18,27 +18,57 @@ const ContactUs = props => {
     return(
         <>
         <Header />
-        <div>
-            <ContactForm 
-            className="webForm"
-            questions={[
-            {
-                question: "Name",
-                tag: "input",
-                objTag: "name"
-            },
-            {
-                question: "Email Address",
-                tag: "input",
-                objTag: "email"
-            },
-            {
-                question: "Message",
-                tag: "textarea",
-                objTag: "message"
-            }
-            ]}
-            handleSubmit={handleSubmit} />
+        <div className="contact">
+            <div>
+                <main className="contactSection">
+                    <h1>Any questions? Send us an inquiry!</h1>
+                    {/* <h1></h1> */}
+                    <ul>
+                        <li>Tell us about your project(s).</li>
+                        <li>What needs are you aiming to fill?</li>
+                        
+                        <li>What timetable you are working around?</li>
+                        <li>Interested in more than one service?</li>
+                        <li>Low budget? Ask us about our investment opportunities.</li>
+                        
+                        <li>New business? Let's get it off the ground.</li>
+                    </ul>
+                </main>
+                <ContactForm 
+                    className="webForm"
+                    questions={[
+                    {
+                        question: "Name",
+                        tag: "input",
+                        objTag: "name"
+                    },
+                    {
+                        question: "Company",
+                        tag: "input",
+                        objTag: "company"
+                    },
+                    {
+                        question: "Email Address",
+                        tag: "input",
+                        objTag: "email"
+                    },
+                    {
+                        question: "Message",
+                        tag: "textarea",
+                        objTag: "message"
+                    }
+                    ]}
+                    state={
+                        {
+                            name: "",
+                            company: "",
+                            email: "",
+                            message: ""
+                        }
+                    }
+                    handleSubmit={handleSubmit} 
+                /> 
+            </div>
         </div>
         <Footer />
         </>

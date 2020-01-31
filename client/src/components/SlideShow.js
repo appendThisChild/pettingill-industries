@@ -55,11 +55,11 @@ const SlideShow = () => {
     return(
         <main className="slideShow" style={{ height: `${containerHeight}px`}}>
             <div style={{ perspective: open ? "" : "750px"}}>
-                <img key={beforeThat} style={{ transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[beforeThat][1]} alt={imagesArr[beforeThat][0]}/>
-                <img key={before} className="tiltLeft" onClick={() => handleForceChange(-1, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(-30deg)", transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[before][1]} alt={imagesArr[before][0]} /> 
-                <img key={showingPicture} onClick={() => zoomIn(imagesArr[showingPicture][1])} className="largeCenter" style={{ width: `${showWidth}px`, transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[showingPicture][1]} alt={imagesArr[showingPicture][0]} />
-                <img key={after} className="tiltRight" onClick={() => handleForceChange(1, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(30deg)", transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[after][1]} alt={imagesArr[after][0]} /> 
-                <img key={afterThat} style={{ transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[afterThat][1]} alt={imagesArr[afterThat][0]}/>
+                <img key={beforeThat} style={{ transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[beforeThat][1]} alt=""/>
+                <img key={before} className="tiltLeft" onClick={() => handleForceChange(-1, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(-30deg)", transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[before][1]} alt="" /> 
+                <img key={showingPicture} onClick={() => zoomIn(imagesArr[showingPicture][1])} className="largeCenter" style={{ width: `${showWidth}px`, transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[showingPicture][1]} alt="" />
+                <img key={after} className="tiltRight" onClick={() => handleForceChange(1, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(30deg)", transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[after][1]} alt="" /> 
+                <img key={afterThat} style={{ transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[afterThat][1]} alt=""/>
             </div>
             <div style={{ display: open ? "none" : "", top: `${containerHeight / 2}`}}>
                 <span onClick={() => handleForceChange(-1, true)}>&#x276E;</span>
