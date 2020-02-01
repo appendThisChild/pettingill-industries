@@ -12,7 +12,9 @@ import ContentCreationSection1 from "./ContentCreationSection1.js"
 import ContentCreationSection2 from "./ContentCreationSection2.js"
 
 const ContentCreationHome = props => {
-
+    const width = window.innerWidth;
+    let open = false;
+    if (width >= 768) open = true;
     useEffect(() => {
         window.scroll(0,0)
 
@@ -22,11 +24,11 @@ const ContentCreationHome = props => {
         <>
             <ImageZoomProvider>
                 <ImageZoom />
-                <Header />
-                <ContentCreationSection1 />
+                <Header color={"tan"} />
                 <SlideShow />
-                <ContentCreationSection2 />
-                <Footer />
+                <ContentCreationSection1 open={open} />
+                <ContentCreationSection2 open={open} />
+                <Footer color={"tan"} />
             </ImageZoomProvider>
         </>
     )

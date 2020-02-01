@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const Footer = props => {
+const Footer = ({ color }) => {
     return(
-        <footer className="footer">
+        <footer className="footer" style={{backgroundImage: `radial-gradient(${color}, black)`}}>
             <main>
                 {/* Any links */}
                 <div>

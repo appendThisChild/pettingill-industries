@@ -1,6 +1,4 @@
 import React from "react"
-// import Image from "../images/circuit-board-vector-png-11.png"
-//  backgroundImage: `url(${Image})`,
 
 const WebDevSection1 = ({ open }) => {
 

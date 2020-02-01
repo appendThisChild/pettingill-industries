@@ -1,5 +1,7 @@
 import React, { useEffect } from "react"
 
+// import Image from "../images/Red_Transparent_Decoration_PNG_Clipart.png"
+
 //components
 import Footer from "./Footer.js"
 import Header from "./Header.js"
@@ -17,12 +19,12 @@ const ContactUs = props => {
 
     return(
         <>
-        <Header />
+        <Header color={"red"}/>
         <div className="contact">
             <div>
                 <main className="contactSection">
+                    {/* <img src={Image} alt=""/> */}
                     <h1>Any questions? Send us an inquiry!</h1>
-                    {/* <h1></h1> */}
                     <ul>
                         <li>Tell us about your project(s).</li>
                         <li>What needs are you aiming to fill?</li>
@@ -70,7 +72,7 @@ const ContactUs = props => {
                 /> 
             </div>
         </div>
-        <Footer />
+        <Footer color={"red"}/>
         </>
     )
 }

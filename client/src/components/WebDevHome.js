@@ -9,7 +9,6 @@ import WebDevSection3 from "./WebDevSection3.js"
 
 const WebDevHome = props => {
     const [ divs, setDivs ] = useState([])
-    // const [ glitchObj, setGlitchObj ] = useState({ position: "50% 50%", size: "250%", timing: "cubic-bezier(.09,1.44,.17,.24)" })
     const [ pulsingSize, setPulsingSize ] = useState("webDevBetweenSections1_0")
     let changeBorder = "";
     let width = window.innerWidth
@@ -28,23 +27,6 @@ const WebDevHome = props => {
     const dotSize = 2;
     const myIntervals = [];
     const randomNumberGenerator = (num) => Math.floor(Math.random() * num)
-    // const changeBackground = num => {
-    //     const size = `${150 + randomNumberGenerator(100)}%`
-    //     const position = `${randomNumberGenerator(100)}% ${randomNumberGenerator(100)}%`
-    //     let timing = "cubic-bezier(.6,-0.95,0,1.17)";
-    //     if (num % 3 === 0){ timing = "cubic-bezier(1,.56,0,1.22)"} 
-    //     else if (num % 2 === 0 ){ timing = "cubic-bezier(.95,.69,.19,1.95)" }
-    //     setGlitchObj({ position, size, timing })
-    // }
-    // const glitchOut = () => {
-    //     let i = 1
-    //     changeBackground(i)
-    //     const myInterval = setInterval(() => {
-    //         changeBackground(i++)
-    //         if (i > 3) i = 1;
-    //     }, 2250);
-    //     myIntervals.push(myInterval)
-    // }
     const pulsing = i => {
         if (i === 0){ setPulsingSize("webDevBetweenSections1_1") } 
         else { setPulsingSize("webDevBetweenSections1_0") }
@@ -111,7 +93,6 @@ const WebDevHome = props => {
     useEffect(() => {
         window.scroll(0,0)
         createDivs()
-        // glitchOut()
         pulse()
         createCircuitry()
         return () => myIntervals.forEach(interval => clearInterval(interval))
@@ -127,13 +108,12 @@ const WebDevHome = props => {
     })
     return(
         <>
-        <Header />
+        <Header color={"rgb(0, 119, 255)"} />
         <div className="webFlexMove" >
             <div className="webDevBetweenSections2">{mappedDivArr}</div>
             <WebDevSection1 open={changeBorder === "" ? false : true}/>
         </div>
         <div className="webFlexMove">
-            {/* <div className="webDevBetweenSections" style={{ backgroundPosition: glitchObj.position, backgroundSize: `auto ${glitchObj.size}`, transition: `all 2.25s ${glitchObj.timing} 0s`}}></div> */}
             <WebDevSection3 open={changeBorder === "" ? false : true}/>
         </div>
         <div className="webFlexMove" style={{ flexDirection: 'row-reverse'}}>
@@ -141,7 +121,7 @@ const WebDevHome = props => {
             <WebDevSection2 open={changeBorder === "" ? false : true}/>
         </div>
         
-        <Footer />
+        <Footer color={"rgb(0, 119, 255)"} />
         </>
     )
 }

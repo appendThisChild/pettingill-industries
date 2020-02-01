@@ -150,15 +150,11 @@ html, body {
 
 .contact {
     background-image: url(./images/ink-texture-background-14.jpg);
-    /* background-image: url(./images/old-yellow-wall-texture-background.jpg); */
     background-size: cover;
-    background-position: center;
+    background-position: center 100%;
     box-shadow: inset 0px 0px 13px 5px black;
 }
 .contact > div {
-    background-image: url(./images/Hbil3Joe_9vKJe0Kr3tH8vuDYhyBFF4AFbvkbfiJL_A.png);
-    background-size: 1000px;
-    /* background-position: center; */
     padding: 25px;
 }
 
@@ -168,12 +164,15 @@ html, body {
 
 
 .contactSection {
-    background-color: rgba(255, 255, 255, 0.90);
+    /* background-color: rgba(255, 255, 255, 0.90); */
     padding: 25px;
     margin-bottom: 25px;
 
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+.contactSection > img {
+    width: 100%;
 }
 .contactSection > h1 {
     font-family: 'Times New Roman', Times, serif;
@@ -201,8 +200,8 @@ html, body {
 
 
 .webForm {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
 
     background-color: rgba(0, 0, 0, 0.90);
     /* margin: 25px; */
@@ -229,7 +228,7 @@ html, body {
 
     background-color: transparent;
     border: 0px; 
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid red;
 
     font-size: 26px;
     color: white;
@@ -296,17 +295,6 @@ html, body {
 
 
 /* WebDevHome .webHome */
-.webDevBetweenSections {
-    box-shadow: inset 0px 0px 15px 5px rgb(80, 80, 80);
-    background-image: url("./images/code.jpg");
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
 
 
 .webDevSectionContainer {
@@ -333,6 +321,7 @@ html, body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 23px;
     letter-spacing: 1.25px;
+    line-height: 30px;
 }
 
 
@@ -404,92 +393,6 @@ html, body {
 
 
 
-/* ContentCreationHome .contentHome */
-/* .starBurst {
-    display: grid;
-    grid-template-columns: repeat(10, 10%);
-    grid-template-rows: repeat(10, 1fr);
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    height: 250px;
-}
-.gridPoint {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-.stillGridPoint {
-    background-image: radial-gradient(white 15%, transparent 72%);
-    height: 0px;
-    width: 0px;
-    position: absolute;
-    transition: all 10s cubic-bezier(.05,.57,.05,1.12) 0s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.stillGridPoint > * {
-    position: absolute;
-    background-image: radial-gradient(white 30%, transparent 72%);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 0px;
-    height: 0px;
-    transition: all 10s cubic-bezier(.05,.57,.05,1.12) 0s;
-    display: flex;
-    align-items: center;
-}
-.stillGridPoint > div {
-    background-size: 50%;
-}
-.stillGridPoint > div > div {
-    background-image: radial-gradient(white 30%, transparent 72%);
-    height: 0px;
-} */
-
-
-
-
-
-
-
-/* .explosionGridPoint {
-    background-image: radial-gradient(white 15%, transparent 72%);
-    position: absolute;
-    transition: all 5s cubic-bezier(0,2.5,.25,.96) 0s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.explosionGridPoint > * {
-    position: absolute;
-    background-image: radial-gradient(white 30%, transparent 72%);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 12px;
-    transition: all 5s cubic-bezier(0,2.5,.25,.96) 0s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.explosionGridPoint > div {
-    background-size: 50%;
-}
-.explosionGridPoint > div > div {
-    background-image: radial-gradient(white 30%, transparent 72%);
-    height: 7px;
-}
-.starBurst > main {
-    grid-column: 1/-1;
-    grid-row: 1/-1;
-} */
-
-
-
 
 
 .slideShow {
@@ -499,11 +402,10 @@ html, body {
     flex-direction: column;
     overflow: hidden;
 
-    border-bottom: 1px solid black;
     background-image: url(./images/bb879760ec493ce47a745af03a90549e-2.jpg);
     background-size: cover;
     background-position: center 0%;
-    box-shadow: inset 0px 5px 15px 2px black;
+    box-shadow: inset 0px 0px 15px 5px black;
 }
 .slideShow > div:first-child {
     display: flex;
@@ -588,25 +490,21 @@ html, body {
 
 
 .contentCreationSectionContainer {
-    /* background-size: auto 100%;
-    background-position: center; */
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 25px;
+    background-size: cover;
+}
+.contentCreationSectionContainer > img {
+    display: block;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .contentCreationSection {
-    margin: 10px;
-    padding-top: 10px;
+    padding-top: 25px;
     padding-bottom: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-
 }
 .contentCreationSection > h1 {
-    padding-top: 7px;
-    padding-bottom: 8px;
+    padding-bottom: 15px;
     margin-bottom: 25px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
@@ -619,24 +517,100 @@ html, body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 23px;
     letter-spacing: 1.25px;
+    line-height: 30px;
 }
 .contentCreationSection > ul {
     padding-left: 25px;
 }
 .contentCreationSection > ul > li {
-    padding-top: 15px;
-
+    padding-bottom: 15px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 23px;
     letter-spacing: 1.25px;
+    line-height: 30px;
 }
-
+.contentCreationSection > ul > li:last-child {
+    padding-bottom: 0px;
+}
 
 
 /* ========================= */
 /* ========================= */
 /* ========================= */
 /* =======contentHome======= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* =======holisticHome====== */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+
+
+.holisticImageBreak {
+    background-image: url(./images/Maroon_Bells_11553a.jpg);
+    background-size: auto 240%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 400px;
+    box-shadow: inset 0px 0px 15px 5px black;
+}
+
+
+
+
+
+.holisticHealingSectionContainer {
+    padding: 25px;
+    background-size: cover;
+}
+.holisticHealingSectionContainer > img {
+    display: block;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.holisticHealingSection {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.holisticHealingSection > h1 {
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 1.25px;
+    line-height: 40px;
+    border-bottom: 1px solid darkorange;
+}
+.holisticHealingSection > p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    letter-spacing: 1.25px;
+    line-height: 30px;
+}
+
+
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* =======holisticHome====== */
 /* ========================= */
 /* ========================= */
 /* ========================= */
@@ -659,7 +633,7 @@ html, body {
 
 /* Header.js .header */
 .header {
-    background-image: radial-gradient(rgb(0, 119, 255), black);
+    /* background-image: radial-gradient(rgb(0, 119, 255), black); */
 }
 .header > div {
     display: flex;
@@ -668,6 +642,9 @@ html, body {
     background-position: center;
     background-size: 100%;
     height: 100%;
+}
+.header > div > div {
+    width: 100%
 }
 .header > div > div > * {
     font-family: Rocket;
@@ -702,7 +679,7 @@ html, body {
 .header > div > div > span {
     font-size: 16px;
     line-height: 0px;
-    margin-left: 264px;
+    margin-left: 70%;
 }
 .header > div > div > p:first-child {
     padding-top: 33px;
@@ -742,7 +719,6 @@ html, body {
 .footer {
     display: flex;
     flex-direction: column;
-    background-image: radial-gradient(rgb(0, 119, 255), black);
     
 }
 .footer > div {
@@ -805,6 +781,13 @@ html, body {
     }
     .header > div > div > p:first-child {
         padding-top: 49px;
+        margin-left: 10%;
+    }
+    .header > div > div > p:nth-child(2) {
+        margin-left: 25%;
+    }
+    .header > div > div > span {
+        margin-left: 60%;
     }
     .header > div > aside > * {
         font-size: 35px;
@@ -825,18 +808,13 @@ html, body {
 
 
     .contact > div > * {
-        box-shadow: 1px 2px 8px 1px black;
+        /* box-shadow: 1px 2px 8px 1px black; */
     }
 
 
 
 
-    .header > div > div > p:first-child {
-        margin-left: 15%;
-    }
-    .header > div > div > p:nth-child(2) {
-        margin-left: 35%;
-    }
+    
 }
 @media (min-width: 768px){
     /* home */
@@ -847,7 +825,6 @@ html, body {
     .home > * {
         flex: 1;
         overflow: hidden;
-        /* margin-left: 1px; */
         margin-right: 1px;
         margin-bottom: 0px;
         height: 100%;
@@ -863,6 +840,12 @@ html, body {
     }
     .header > div > aside > * {
         font-size: 36px;
+    }
+    .header > div > div > p:nth-child(2) {
+        margin-left: 20%;
+    }
+    .header > div > div > span {
+        margin-left: 40%;
     }
     /* web dev */
     .webFlexMove {
@@ -893,6 +876,25 @@ html, body {
         flex: 1;
         background-position: -225px center;
     }
+
+
+
+
+
+ 
+    .contentCreationSectionContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 550px;
+    }
+    .holisticHealingSectionContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 550px;
+    }
+
 
 
 
@@ -929,13 +931,6 @@ html, body {
         margin-right: 45px;
     }
 
-
-    .header > div > div > p:first-child {
-        margin-left: 35%;
-    }
-    .header > div > div > p:nth-child(2) {
-        margin-left: 55%;
-    }
 }
 @media (min-width: 1440px){
     

@@ -6,7 +6,7 @@ const width = window.innerWidth
 let myIntervals = 0;
 
 const SlideShow = () => {
-    const [showingPicture, setShowingPicture] = useState(0)
+    const [showingPictures, setShowingPictures] = useState([0,1,2,3,4])
     const { open, zoomIn } = useImageZoom()
     
     let showWidth;
@@ -30,17 +30,17 @@ const SlideShow = () => {
     const imagesArr = Object.entries(images)
     const handleForceChange = (num, choice) => {
         if (choice) clearInterval(myIntervals);
-        setShowingPicture(prev => {
-            if (prev + num >= imagesArr.length){
-                return 0 
-            } else if (prev + num < 0){
-                return imagesArr.length + num
+        setShowingPictures(prev => {
+            if (num){
+                prev.shift()
+                return prev[prev.length - 1] + 1 >= imagesArr.length ? [...prev, 0] : [...prev, prev[prev.length - 1] + 1]
             } else {
-                return prev + num
+                prev.pop()
+                return prev[0] - 1 < 0 ? [imagesArr.length - 1, ...prev] : [prev[0] - 1, ...prev]
             }
         })
     }
-    const rotatePicture = () => myIntervals = setInterval(() => handleForceChange(1), 6000);
+    const rotatePicture = () => myIntervals = setInterval(() => handleForceChange(true), 6000);
 
     useEffect(() => {
         rotatePicture()
@@ -48,22 +48,18 @@ const SlideShow = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const beforeThat = showingPicture - 2 < 0 ? showingPicture + imagesArr.length - 2 : showingPicture - 2
-    const before = showingPicture - 1 < 0 ? showingPicture + imagesArr.length - 1 : showingPicture - 1
-    const after = showingPicture + 1 >= imagesArr.length ? showingPicture - imagesArr.length + 1 : showingPicture + 1
-    const afterThat = showingPicture + 2 >= imagesArr.length ? showingPicture - imagesArr.length + 2 : showingPicture + 2
     return(
         <main className="slideShow" style={{ height: `${containerHeight}px`}}>
             <div style={{ perspective: open ? "" : "750px"}}>
-                <img key={beforeThat} style={{ transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[beforeThat][1]} alt=""/>
-                <img key={before} className="tiltLeft" onClick={() => handleForceChange(-1, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(-30deg)", transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[before][1]} alt="" /> 
-                <img key={showingPicture} onClick={() => zoomIn(imagesArr[showingPicture][1])} className="largeCenter" style={{ width: `${showWidth}px`, transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[showingPicture][1]} alt="" />
-                <img key={after} className="tiltRight" onClick={() => handleForceChange(1, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(30deg)", transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[after][1]} alt="" /> 
-                <img key={afterThat} style={{ transition: open ? "" : "all 1.25s linear 0s"}} src={imagesArr[afterThat][1]} alt=""/>
+                <img key={showingPictures[0]} style={{ transition: open ? "" : "all 1.5s linear 0s"}} src={imagesArr[showingPictures[0]][1]} alt=""/>
+                <img key={showingPictures[1]} className="tiltLeft" onClick={() => handleForceChange(false, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(-30deg)", transition: open ? "" : "all 1.5s linear 0s"}} src={imagesArr[showingPictures[1]][1]} alt="" /> 
+                <img key={showingPictures[2]} onClick={() => zoomIn(imagesArr[showingPictures[2]][1])} className="largeCenter" style={{ width: `${showWidth}px`, transition: open ? "" : "all 1.5s linear 0s"}} src={imagesArr[showingPictures[2]][1]} alt="" />
+                <img key={showingPictures[3]} className="tiltRight" onClick={() => handleForceChange(true, true)} style={{ width: `${showWidth - 150}px`, transform: open ? "" : "rotateY(30deg)", transition: open ? "" : "all 1.5s linear 0s"}} src={imagesArr[showingPictures[3]][1]} alt="" /> 
+                <img key={showingPictures[4]} style={{ transition: open ? "" : "all 1.5s linear 0s"}} src={imagesArr[showingPictures[4]][1]} alt=""/>
             </div>
             <div style={{ display: open ? "none" : "", top: `${containerHeight / 2}`}}>
-                <span onClick={() => handleForceChange(-1, true)}>&#x276E;</span>
-                <span onClick={() => handleForceChange(1, true)}>&#x276F;</span>
+                <span onClick={() => handleForceChange(false, true)}>&#x276E;</span>
+                <span onClick={() => handleForceChange(true, true)}>&#x276F;</span>
             </div>
         </main>
     )
