@@ -74,11 +74,17 @@ html, body {
 .home > * > div {
     display: flex;
     flex-direction: column;
-    border-radius: 6px;
-    color: white;
+    
+    color: yellow;
     text-decoration: none;
     text-align: center;
-    padding: 4px;
+    text-shadow: 0px 2px 2px black;
+
+    font-family: Rocket;
+    line-height: 40px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 40px;
 }
 /* each sections photos */
 .home > section {
@@ -93,34 +99,7 @@ html, body {
 .expanded {
     height: 300px;
 }
-/* texts/links */
-.home > section > div {
-    font-family: Rocket;
-    line-height: 40px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    font-size: 35px;
-    text-shadow: 1px 1px 4px black;
-    padding: 6px;
-}
-.home > main > div {
-    font-family: Rocket;
-    line-height: 40px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    font-size: 35px;
-    text-shadow: 1px 1px 4px black;
-    padding: 6px;
-}
-.home > article > div {
-    font-family: Rocket;
-    line-height: 40px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    font-size: 35px;
-    text-shadow: 1px 1px 4px black;
-    padding: 6px;
-}
+
 
 
 
@@ -149,15 +128,10 @@ html, body {
 
 
 .contact {
-    /* background-image: url(./images/ink-texture-background-14.jpg); */
     background-size: cover;
     background-position: center 100%;
-    /* box-shadow: inset 0px 0px 13px 5px black; */
 }
-.contact > div {
-    /* padding-top: 25px; */
-    /* padding-bottom: 25px; */
-}
+
 
 
 
@@ -650,9 +624,6 @@ html, body {
 
 
 /* Header.js .header */
-.header {
-    /* background-image: radial-gradient(rgb(0, 119, 255), black); */
-}
 .header > div {
     display: flex;
     flex-direction: column;

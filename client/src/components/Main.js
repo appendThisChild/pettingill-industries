@@ -11,18 +11,18 @@ const Main = props => {
     return(
         <>
             <div className="home">
-                <section onClick={() => setOn("section")} className={on === "section" ? "expanded" : ""}>
-                    <div onClick={() => link("website-development")}>
+                <section onClick={() => {setOn("section"); link("website-development")}} className={on === "section" ? "expanded" : ""}>
+                    <div>
                         Website Development
                     </div>
                 </section>
-                <main onClick={() => setOn("main")} className={on === "main" ? "expanded" : ""}>
-                    <div onClick={() => link("content-creation")}>
+                <main onClick={() => {setOn("main"); link("content-creation")}} className={on === "main" ? "expanded" : ""}>
+                    <div>
                         Content Creation
                     </div>
                 </main>
-                <article onClick={() => setOn("article")} className={on === "article" ? "expanded" : ""}>
-                    <div onClick={() => link("holistic-healing")}>
+                <article onClick={() => {setOn("article"); link("holistic-healing")}} className={on === "article" ? "expanded" : ""}>
+                    <div>
                         Holistic Healing
                     </div>
                 </article>
