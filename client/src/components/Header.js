@@ -9,15 +9,15 @@ const Header = ({ color }) => {
             <header className="header" style={{backgroundImage: `radial-gradient(${color}, black)`}}>
                 <div>
                     <div>
-                        <p onClick={() => history.push("/")}>Pettingill</p>
-                        <p onClick={() => history.push("/")}>Industries</p>
+                        <p>Pettingill</p>
+                        <p>Industries</p>
                         <span>LLC</span>
                     </div>
                     <aside>
-                        <aside>f</aside>
-                        <aside>c</aside>
-                        <aside>i</aside>
-                        <aside>t</aside>
+                        <aside onClick={() => history.push("/website-development")}>&#x2634;</aside>
+                        <aside onClick={() => history.push("/content-creation")}>&#x2630;</aside>
+                        <aside onClick={() => history.push("/holistic-healing")}>&#x2631;</aside>
+                        <aside onClick={() => history.push("/contact-us")}>&#x2633;</aside>
                     </aside>
                 </div>
             </header>

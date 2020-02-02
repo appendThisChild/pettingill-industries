@@ -7,7 +7,7 @@ const WebDevSection2 = ({ open }) => {
         <main className="webDevSectionContainer">
             <div className="webDevSection">
                 <h1><span>&#x2635;</span> Capture your Essence</h1>
-                <p>Talking about design and it's impact on you image as a company. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Web design is important, it impacts how your audience perceives your brand. The impression you make on them can either get them to remain on your page and learn more about your business or leave your page and turn to a competitor. Design is one of the most important factors when building a brand. We will set you apart from your competition and help you garner the desired emotion or feeling from customers.</p>
             </div>
         </main>
         

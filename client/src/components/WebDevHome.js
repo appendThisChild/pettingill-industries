@@ -19,7 +19,7 @@ const WebDevHome = props => {
         if (width > 1024) numberOfLines = 20;
         width = width / 3;
         height = 550;
-        changeBorder = "1px solid black"
+        changeBorder = "1px solid black";
     } 
     const lineLengths = 75;
     const stepsBeforeTurn = 25;
@@ -37,7 +37,7 @@ const WebDevHome = props => {
         const myInterval = setInterval(() => {
             if ( i === 0){ pulsing(i++) } 
             else { pulsing(i--) }
-        }, 1400)
+        }, 1750)
         myIntervals.push(myInterval)
     }
     const createDivs = () => {
@@ -108,7 +108,7 @@ const WebDevHome = props => {
     })
     return(
         <>
-        <Header color={"rgb(0, 119, 255)"} />
+        <Header color={"blueviolet"} />
         <div className="webFlexMove" >
             <div className="webDevBetweenSections2">{mappedDivArr}</div>
             <WebDevSection1 open={changeBorder === "" ? false : true}/>
@@ -121,7 +121,7 @@ const WebDevHome = props => {
             <WebDevSection2 open={changeBorder === "" ? false : true}/>
         </div>
         
-        <Footer color={"rgb(0, 119, 255)"} />
+        <Footer color={"blueviolet"} />
         </>
     )
 }

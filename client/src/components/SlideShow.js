@@ -29,7 +29,7 @@ const SlideShow = () => {
     const images =  importAll(require.context('../images/portfolio', false, /\.(png|jpe?g|svg)$/));
     const imagesArr = Object.entries(images)
     const handleForceChange = (num, choice) => {
-        if (choice) clearInterval(myIntervals);
+        // if (choice) clearInterval(myIntervals);
         setShowingPictures(prev => {
             if (num){
                 prev.shift()

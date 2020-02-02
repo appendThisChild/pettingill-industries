@@ -10,7 +10,15 @@ const holisticHealingSection1 = ({ open }) => {
         <div className="holisticHealingSectionContainer" style={{ flexDirection: "row-reverse"}}>
             <div className="holisticHealingSection" style={{ marginLeft: open ? "25px" : ""}}>
                 <h1><span>&#x2631;</span> Uncover Tranquility</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>When we heal holistically, we address imbalances on all levels, rather than one or two, and so it becomes a life-long process in achieving overall life balance. The ultimate goal of aligning the body, mind and soul promises a happier, healthier, more balanced state of being.</p>
+                <p style={{ paddingTop: "25px"}}>What we provide:</p>
+                <ul style={{ paddingTop: "10px"}}>
+                    <li>Guided Meditations</li>
+                    <li><a href={"https://www.mtmscheduling.com/"}>Massage Therapy</a></li>
+                    <li>Reiki</li>
+                    <li>Sound Therapy</li>
+                    <li>Yoga</li>
+                </ul>
             </div>
             <img src={Image} alt=""/>
         </div>

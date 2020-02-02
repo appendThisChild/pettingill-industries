@@ -20,7 +20,7 @@ const HolisticHealingHome = props => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
-    console.log(offSet)
+    
     return(
         <>
         <Header color={"darkorange"}/>

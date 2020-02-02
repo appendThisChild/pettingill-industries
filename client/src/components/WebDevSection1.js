@@ -6,7 +6,7 @@ const WebDevSection1 = ({ open }) => {
         <div className="webDevSectionContainer" style={{ backgroundRepeat: `no-repeat`}}>
             <div className="webDevSection">
                 <h1><span>&#x2634;</span> Elevate your Business</h1>
-                <p>Talking about the importance of professional presents through having a website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Living in the digital world, a website is now a necessity for a business, big or small. If you have a business and don’t have a website, you are losing a number of great opportunities for your business. A website itself can be used to accomplish many different marketing strategies to help your business grow. The web has a far wider reach than any other form of advertising. With us, your website will be the center of your company`s online presence.</p>
             </div>
         </div>
         

@@ -23,6 +23,7 @@ const ContactForm = ({ questions, state, handleSubmit, className }) => {
             )
         })
         handleSubmit(message)
+        setInfo(state)
     }
 
     const questionsMapped = questions.map((q, i) => {
@@ -40,7 +41,7 @@ const ContactForm = ({ questions, state, handleSubmit, className }) => {
     })
     return(
         <form className={className} onSubmit={preSubmit}>
-            <h3>Contact Us!</h3>
+            <h3><span>&#x2608;</span> Contact Us!</h3>
             {questionsMapped}
             <button><span>&#x2607;<span>Send</span></span></button>
         </form>
