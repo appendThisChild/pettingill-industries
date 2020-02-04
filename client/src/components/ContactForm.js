@@ -10,19 +10,7 @@ const ContactForm = ({ questions, state, handleSubmit, className }) => {
     }
     const preSubmit = e => {
         e.preventDefault()
-        const entries = Object.entries(info)
-        const message = entries.map(arr => {
-            const question = questions.filter(obj => {
-                return obj.objTag === arr[0]
-            })
-            return(
-                {
-                    q: question[0].question,
-                    a: arr[1]
-                }
-            )
-        })
-        handleSubmit(message)
+        handleSubmit(info)
         setInfo(state)
     }
 

@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 // added this line below for deployment
 const path = require('path')
 // const expressJwt = require('express-jwt')
+const { mongoURI, options } = require("./utils/app.js")
 const PORT = process.env.PORT || 6350
 
 app.use(sslRedirect())
@@ -20,7 +21,8 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 const conn = mongoose.connect(process.env.MONGODB_URI || mongoURI, options)
 conn.then(() => console.log('[o] Connected to the DB'), (err) => console.log(err))
 
-
+// client create contact message
+app.use('/contactMessage', require('./routes/contactMessageRoutes.js'))
 
 app.use((err, req, res, next) => {
     console.log('Caught Error')

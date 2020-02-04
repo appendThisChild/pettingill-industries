@@ -31,6 +31,9 @@ html, body {
     font-family: Learning-Curve;
     src: url(./fonts/LearningCurve.ttf)
 }
+body {
+    background-color: black;
+}
 
 
 
@@ -50,7 +53,6 @@ html, body {
 
 /* home / Main.js */
 .home {
-    background-color: black;
     display: flex;
     flex-direction: column;
 }
@@ -130,6 +132,7 @@ html, body {
 .contact {
     background-size: cover;
     background-position: center 100%;
+    background-color: white;
 }
 
 
@@ -244,6 +247,45 @@ html, body {
 
 
 
+
+
+.customToast {
+    display: flex;
+    align-items: center;
+    
+    width: 275px;
+    height: 55px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 2px 1px 4px 1px black;
+}
+.customToast > h1 {
+    flex: 7;
+    display: flex;
+    align-items: center;
+
+    background-color: rgb(223, 223, 223);
+    height: 100%;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    padding-left: 20px;
+    font-size: 23px;
+    font-weight: 100;
+}
+.customToast > span {
+    display: flex;
+    justify-content: center;
+
+    flex: 2;
+    font-size: 22px;
+}
+
+
+
+
 /* ========================= */
 /* ========================= */
 /* ========================= */
@@ -272,6 +314,7 @@ html, body {
 
 
 .webDevSectionContainer {
+    background-color: white;
     padding: 25px;
 
     background-size: cover;
@@ -464,6 +507,7 @@ html, body {
 
 
 .contentCreationSectionContainer {
+    background-color: white;
     padding: 25px;
     background-size: cover;
 }
@@ -548,6 +592,7 @@ html, body {
 
 
 .holisticHealingSectionContainer {
+    background-color: white;
     padding: 25px;
     background-size: cover;
 }
@@ -862,7 +907,7 @@ html, body {
     .webDevBetweenSections2 {
         height: 550px;
         flex: 1;
-        background-position: -225px center;
+        background-position: -300px center;
     }
 
 
@@ -904,7 +949,7 @@ html, body {
         background-size: auto 135%;
     }
     .webDevBetweenSections2 {
-        background-position: -150px center;
+        background-position: -250px center;
     }
     /* content-creation */
     .slideShow > div > span:first-child {

@@ -14,8 +14,7 @@ const ContentCreationSection2 = ({ open }) => {
                     <li>Videos</li>
                     <li>Photographs</li>
                     <li>Infographics</li>
-                    <li>Testimonials/Reviews</li>
-                    <li>Influencers/Paid Ad Content</li>
+                    <li>Testimonials</li>
                 </ul>
             </section>
         </div>
