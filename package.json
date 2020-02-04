@@ -2,7 +2,7 @@
   "name": "pettingill-industries",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -11,6 +11,14 @@
   "engines": {
     "node": "12.13.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appendThisChild/pettingill-industries.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appendThisChild/pettingill-industries/issues"
+  },
+  "homepage": "https://github.com/appendThisChild/pettingill-industries#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
