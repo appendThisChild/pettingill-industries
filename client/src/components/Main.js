@@ -11,7 +11,7 @@ const Main = props => {
             history.push(`/${endpoint}`)
         }, 750)
     }
-    console.log(testPhoto)
+    // console.log(testPhoto)
     return(
         <>
             <div className="home">

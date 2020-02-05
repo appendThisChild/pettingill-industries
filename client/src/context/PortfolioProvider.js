@@ -7,7 +7,7 @@ const PortfolioProvider = props => {
     const [ testPhoto, setTestPhoto ] = useState('')
 
     const firstRequest = () => {
-        console.log("Hey")
+        // console.log("Hey")
         axios.post('/portfolioAccess', { something: "something" })
             .then(res => setTestPhoto(`data:image/png;base64,${res.data}`))
             .catch(err => console.log(err.response.data.errMsg))

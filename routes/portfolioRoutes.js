@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-const fs = require('fs')
 const AWS = require('aws-sdk');
 const uuid = require('node-uuid');
 
@@ -23,16 +22,16 @@ router.route('/')
         //     return res.status(201).send(data)
         // })
 
-        // s3.getObjectTorrent({ Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg" }, (err, data) => {
-        //     if (err) {
-        //         res.status(500)
-        //         return 
-        //     }
-        //     return res.status(201).send(data.Body.toString('base64'))
-        // })
+        s3.getObject({ Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg" }, (err, data) => {
+            if (err) {
+                res.status(500)
+                return 
+            }
+            return res.status(201).send(data.Body.toString('base64'))
+        })
 
-        const params = {Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg"};
-        s3.getObject(params).createReadStream().setEncoding('base64').pipe(res);
+        // const params = {Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg"};
+        // s3.getObject(params).createReadStream().setEncoding('base64').pipe(res);
     
 
 
