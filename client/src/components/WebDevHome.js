@@ -16,7 +16,7 @@ const WebDevHome = props => {
     let numberOfLines = 10;
     if (width > 425 && width < 768){ numberOfLines = 15; } 
     else if (width >= 768){ 
-        if (width > 1024) numberOfLines = 20;
+        if (width > 1024) numberOfLines = 15;
         width = width / 3;
         height = 550;
         changeBorder = "1px solid black";
