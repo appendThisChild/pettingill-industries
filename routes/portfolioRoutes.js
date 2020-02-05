@@ -25,7 +25,7 @@ router.route('/')
         s3.getObject({ Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg" }, (err, data) => {
             if (err) {
                 res.status(500)
-                return 
+                return next(err)
             }
             return res.status(201).send(data.Body.toString('base64'))
         })

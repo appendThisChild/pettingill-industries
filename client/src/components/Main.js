@@ -11,6 +11,7 @@ const Main = props => {
             history.push(`/${endpoint}`)
         }, 750)
     }
+    
     // console.log(testPhoto)
     return(
         <>
