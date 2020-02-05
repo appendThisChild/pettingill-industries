@@ -90,7 +90,7 @@ body {
 }
 /* each sections photos */
 .home > section {
-    background-image: url("./images/Get-Best-Website-Development.jpg");
+    /* background-image: url("./images/Get-Best-Website-Development.jpg"); */
 }
 .home > main {
     background-image: url("./images/IMG_6441.jpg");
