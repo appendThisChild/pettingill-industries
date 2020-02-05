@@ -13,8 +13,8 @@ const WebDevHome = props => {
     let changeBorder = "";
     let width = window.innerWidth
     let height = 300;
-    let numberOfLines = 15;
-    if (width > 425 && width < 768){ numberOfLines = 20; } 
+    let numberOfLines = 10;
+    if (width > 425 && width < 768){ numberOfLines = 15; } 
     else if (width >= 768){ 
         if (width > 1024) numberOfLines = 20;
         width = width / 3;
