@@ -90,7 +90,7 @@ body {
 }
 /* each sections photos */
 .home > section {
-    /* background-image: url("./images/Get-Best-Website-Development.jpg"); */
+    background-image: url("./images/Get-Best-Website-Development.jpg");
 }
 .home > main {
     background-image: url("./images/IMG_6441.jpg");
@@ -356,13 +356,13 @@ body {
 .webDevBetweenSections1_0 {
     background-color: black;
     background-size: 100%;
-    transition: all 1.75s cubic-bezier(.44,-0.68,0,-0.44) 0s;
+    transition: all 1.55s cubic-bezier(.44,-0.68,0,-0.44) 0s;
     
 }
 .webDevBetweenSections1_1 {
     background-color: white;
     background-size: 140%;
-    transition: all 1.75s cubic-bezier(1,1.44,.44,1.68) 0s;
+    transition: all 1.55s cubic-bezier(1,1.44,.44,1.68) 0s;
 }
 
 

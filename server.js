@@ -24,7 +24,7 @@ conn.then(() => console.log('[o] Connected to the DB'), (err) => console.log(err
 // client create contact message
 app.use('/contactMessage', require('./routes/contactMessageRoutes.js'))
 
-app.use('/portfolioAccess',require('./routes/portfolioRoutes.js'))
+// app.use('/portfolioAccess',require('./routes/portfolioRoutes.js'))
 
 app.use((err, req, res, next) => {
     console.log('Caught Error')

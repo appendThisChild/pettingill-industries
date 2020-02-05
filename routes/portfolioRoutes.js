@@ -12,8 +12,16 @@ const keyName = 'hello_world.txt';
 
 router.route('/')
     .post((req, res, next) => {
-        console.log("something")
+        const { file, size } = req.body
 
+        s3.getObject({ Bucket: bucketName, Key: "Portfolio/IMG_5788.jpg" }, (err, data) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(data.Body.toString('base64'))
+        })
+        
         // s3.listObjects({ Bucket: bucketName }, (err, data) => {
         //     if (err) {
         //         res.status(500)
@@ -21,18 +29,6 @@ router.route('/')
         //     }
         //     return res.status(201).send(data)
         // })
-
-        s3.getObject({ Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg" }, (err, data) => {
-            if (err) {
-                res.status(500)
-                return next(err)
-            }
-            return res.status(201).send(data.Body.toString('base64'))
-        })
-
-        // const params = {Bucket: bucketName, Key: "Portfolio/IMG_0360.jpg"};
-        // s3.getObject(params).createReadStream().setEncoding('base64').pipe(res);
-    
 
 
         // s3.createBucket({Bucket: bucketName}, () => {

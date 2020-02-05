@@ -33,11 +33,10 @@ const WebDevHome = props => {
     }
     const pulse = () => {
         let i = 0
-        pulsing(i)
         const myInterval = setInterval(() => {
             if ( i === 0){ pulsing(i++) } 
             else { pulsing(i--) }
-        }, 1750)
+        }, 1550)
         myIntervals.push(myInterval)
     }
     const createDivs = () => {
