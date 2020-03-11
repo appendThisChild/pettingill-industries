@@ -16,7 +16,7 @@ const Footer = ({ color }) => {
                 </div>
             </main>
             <div>
-                <p>&#169; {new Date().getFullYear()} Pettingill Industries, All rights reserved.</p>
+                <p>PETTINGILL INDUSTRIES &#169; 2020</p>
             </div>
         </footer>
     )

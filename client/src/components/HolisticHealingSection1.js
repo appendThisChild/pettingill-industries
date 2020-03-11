@@ -14,7 +14,7 @@ const holisticHealingSection1 = ({ open }) => {
                 <p style={{ paddingTop: "25px"}}>What we provide:</p>
                 <ul style={{ paddingTop: "10px"}}>
                     <li>Guided Meditations</li>
-                    <li><a href={"https://www.mtmscheduling.com/"}>Massage Therapy</a></li>
+                    <li><a href={"https://www.blissedoutbodywork.com/"}>Massage Therapy</a></li>
                     <li>Reiki</li>
                     <li>Sound Therapy</li>
                     <li>Yoga</li>

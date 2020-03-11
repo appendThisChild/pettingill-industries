@@ -12,6 +12,7 @@ const path = require('path')
 const { mongoURI, options } = require("./utils/app.js")
 const PORT = process.env.PORT || 6350
 
+// added line for heroku redirect to https
 app.use(sslRedirect())
 app.use(express.json())
 app.use(morgan('dev'))
